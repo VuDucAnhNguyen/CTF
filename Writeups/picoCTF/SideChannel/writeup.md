@@ -46,6 +46,7 @@ for position in range(pass_length):
     print(f"Current guess: {found_password}")
 ```
 Chạy script, nhận được mã pin và submit thì lấy được flag
+
 ![image](img1.png)
 
 FLAG: **picoCTF{t1m1ng_4tt4ck_914c5ec3}**
