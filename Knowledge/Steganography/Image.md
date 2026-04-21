@@ -17,5 +17,5 @@ Marker `FF D9` kết thúc của ảnh JPEG
 
 ## Các phương pháp ẩn tin trong ảnh
 ### Thay đổi kích thước hiển thị của ảnh
-Kích thước hiển thị của ảnh bé hơn so với kiến thức thực tế, flag có thể được dấu vào phần không được hiển thị này
+Kích thước hiển thị của ảnh bé hơn so với kiến thức thực tế, flag có thể được giấu vào phần không được hiển thị này 
 VD: https://github.com/VuDucAnhNguyen/CTF/blob/main/Writeups/CIT_2026/Steganography/Are_ya_winning%2C_son/writeup.md
