@@ -20,3 +20,19 @@ Marker `FF D9` kết thúc của ảnh JPEG
 Kích thước hiển thị của ảnh bé hơn so với kiến thức thực tế, flag có thể được giấu vào phần không được hiển thị này
 
 VD: https://github.com/VuDucAnhNguyen/CTF/blob/main/Writeups/CIT_2026/Steganography/Are_ya_winning%2C_son/writeup.md
+
+### Sử dụng steghide/ stegseek
+file có thể được giấu sử dụng `steghide` nhưng sẽ cần passphrase để có thể trích xuất
+```
+steghide --extract -sf [file_name]
+```
+<br>
+
+passphrase này có thể bruteforce sử dụng `stegseek`
+```
+stegseek --crack [file_name] rockyou.txt
+```
+### Chèn byte xen giữa các byte của ảnh
+Byte của file được giấu nằm xen giữa các byte ảnh. Thường được dùng cho các định dạng ảnh không nén (.bmp) do dữ liệu điểm ảnh pixel được lưu tuyến tính nên ảnh chỉ nhiễu chứ không hỏng như .png và .jpg
+
+VD: https://github.com/VuDucAnhNguyen/CTF/blob/main/Writeups/picoCTF/Invisible_WORDs/writeup.md
