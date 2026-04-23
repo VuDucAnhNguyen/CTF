@@ -1,6 +1,5 @@
 ## Lý thuyết
-### Phone call
-Phần bắt đầu của cuộc điện thoại là DTMF (Dual-Tone Multi-Frequency - Âm kép đa tần) là hệ thống tín hiệu viễn thông để mã hóa các phím bấm (0-9, *, #)
+
 
 ## Các phương pháp và công cụ ẩn tin trong âm thanh
 ### Sử dụng minimodem
@@ -26,7 +25,14 @@ Baud rate: là tốc độ bit được truyền đi mỗi giây, baud rate củ
 [Đọc thêm](https://manpages.ubuntu.com/manpages/noble/man1/minimodem.1.html)
 
 ### Sử dụng Audacity
-Audacity giúp quan sát dạng sóng, phân tích phổ âm (spectrogram), giúp xác định mark và space để dùng cho minimodem, DTMF,..
+Audacity giúp quan sát dạng sóng, phân tích phổ âm (spectrogram), giúp xác định mark và space để dùng cho minimodem,..
 
 VD: [Dog barking](../../Writeups/CIT_2026/Miscellaneous/Dog_barking/writeup.md)
+
+### Phone call
+Phần bắt đầu của cuộc điện thoại là DTMF (Dual-Tone Multi-Frequency - Âm kép đa tần) là hệ thống tín hiệu viễn thông để mã hóa các phím bấm (0-9, *, #). Sử dụng multimon-ng để lấy số điện thoại (cần đưa sample rate về 22050Hz để sử dụng multimon-ng)
+```
+sox [file_name] -r 22050  [output_name]
+multimon-ng -c -a DTMF -t [output_type] [output_name]
+```
 
