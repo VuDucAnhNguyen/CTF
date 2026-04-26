@@ -99,3 +99,70 @@ coreXY('plottergeist.pcap')
 ![image](img3.png)
 
 FLAG: **hacktheon2026{the_plotter_reveals_its_secret_through_sound}**
+
+
+>[!Note]
+> Bài này có thể vẽ bằng matplot mô phỏng chuyển động của coreXY bằng script dưới đây tuy nhiên kết quả sẽ khó nhìn
+``` python
+from scapy.all import rdpcap, UDP
+import matplotlib.pyplot as plt
+import struct
+
+def coreXY(pcap_file):
+    packets = rdpcap(pcap_file)
+    
+    curr_x, curr_y = 0, 0
+    
+    strokes = []
+    current_stroke = []
+
+    for pkt in packets:
+        if pkt.haslayer(UDP) and pkt[UDP].sport == 31337:
+            payload = bytes(pkt[UDP].payload)
+                
+            try:
+                dt = struct.unpack('>h', payload[3:5])[0]
+                am = struct.unpack('>h', payload[5:7])[0]
+                bm = struct.unpack('>h', payload[7:9])[0]
+                        
+                dx = (am + bm)
+                dy = (am - bm)/2
+                
+                new_x = curr_x + dx
+                new_y = curr_y + dy
+                    
+                if dt == 4:
+                    if not current_stroke:
+                        current_stroke.append((curr_x, curr_y))
+
+                    current_stroke.append((new_x, new_y))
+                else:
+                    if current_stroke:
+                        strokes.append(current_stroke)
+                        current_stroke = []
+
+                curr_x = new_x
+                curr_y = new_y
+            except Exception as e:
+                continue
+
+    # --- Hiển thị kết quả ---
+    plt.figure(figsize=(20, 5))
+    for stroke in strokes:
+        xs, ys = zip(*stroke)
+        unique_pts = set(zip(xs, ys))
+        if len(unique_pts) == 1:
+            plt.scatter(xs[0], ys[0], color='blue', s=10)
+        else:
+            plt.plot(xs, ys, color='blue', linewidth=2)
+
+    plt.gca().set_aspect('auto')
+    plt.grid(True, linestyle=':', alpha=0.5)
+    plt.gca().invert_yaxis()
+
+    plt.show()
+
+coreXY('plottergeist.pcap')
+```
+![image](img4.png)
+![image](img5.png)
