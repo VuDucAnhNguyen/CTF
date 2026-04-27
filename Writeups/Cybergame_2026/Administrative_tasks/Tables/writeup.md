@@ -37,7 +37,7 @@ Tại sheet `Results_1` khi mở ra thì thấy các comment khả nghi, kiểm 
 
 **HIDDEN_MSG_2_{aa30c9bf}**
 
-Tại sheet `.` thì tại các ô có chứa func để viết thành ký tự nhưng đang bị lỗi `!VALUE#` do ký tự nối chuỗi của Excel là `&` chứ không phải `+`, sửa lại thì đây là 1 macros VBA thực hiện ghép chuỗi, lật ngược chuỗi và hiển thị kết quả qua hộp thoại là password
+Tại sheet `.` thì tại các ô có chứa func để viết thành ký tự nhưng đang bị lỗi `!VALUE#` do ký tự nối chuỗi của Excel là `&` chứ không phải `+`, sửa lại thì đây là 1 macro VBA thực hiện ghép chuỗi, lật ngược chuỗi và hiển thị kết quả qua hộp thoại là password
 ![image](img9.png)
 ```
 Sub run()
