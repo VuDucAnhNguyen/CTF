@@ -1,5 +1,8 @@
 ## Are ya wining, son?
+### Đề bài
+Well.. is he? It almost feels like we're breaking the fourth wall ;)
 
+### Giải
 Khi tải về được file ảnh `challenge.jpg`. Sử dụng các công cụ exiftool, binwalk, color planes, stegseek đều không thu được gì
 
 ![image](challenge.jpg)

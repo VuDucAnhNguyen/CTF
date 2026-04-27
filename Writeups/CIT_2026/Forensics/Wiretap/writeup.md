@@ -1,5 +1,8 @@
 ## Wiretap
+### Đề bài
+Ton, they're listening to the phones meet me down at the badabing.
 
+### Giải
 Sau khi tải về thì được file `beep_beep_boop.wav`
 Sử dụng minimodem để trích xuất thì được 1 file `.html`
 ```

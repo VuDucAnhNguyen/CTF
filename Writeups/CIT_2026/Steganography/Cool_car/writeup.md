@@ -1,5 +1,8 @@
 ## Cool car
+### Đề bài
+I got this cool car here, maybe you can find a flag.
 
+### Giải
 Khi tải về được file ảnh `cool_car.png`
 
 ![image](cool_car.png)

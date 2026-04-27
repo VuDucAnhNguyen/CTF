@@ -1,4 +1,5 @@
 ## Plottergeist
+### Đề bài
 I built a one-of-a-kind custom CoreXY pen plotter using logic I designed myself. However, the pen plotter stopped working during the final bench test. The only remaining evidence is controller traffic logs and microphone recordings captured from the same workbench session.
 
 The capture only shows motion traffic. It does not directly tell you which moves actually put ink on the page. The microphone recording may contain small but repeatable differences between move types.
@@ -9,6 +10,7 @@ Sau khi tải về và giải nén thì được 2 file:
  - `bench_mic.wav` chứa âm thanh của máy khi hoạt động
  - `plottergeist.pcap` chứa log điều khiển của máy
 
+### Giải
 Sử dụng wireshark phân tích `plottergeist.pcap` thì thấy có nhiều gói tin trao đổi giữa ip `10.13.37.10` và `10.13.37.42`. Theo luồng UDP này thì có thể tìm thấy format lệnh điều khiển của máy và cũng xác định được là ip `10.13.37.10` sẽ đóng vai trò điều khiển
 ![image](img1.png)
 

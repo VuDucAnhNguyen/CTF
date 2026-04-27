@@ -1,10 +1,10 @@
 ## Robots
-Đề bài như sau:
+### Đề bài
+Beep Boop
 
-![image](img1.png)
-
+### Giải
 truy cập vào robots.txt từ url và tìm được flag
 
-![image](img2.png)
+![image](img1.png)
 
 FLAG: **CIT{S8kMc789Gd37Py1gQPiWbeqxx}**

@@ -1,5 +1,8 @@
 ## Car crash
+### Đề bài
+video games are ruining this country...
 
+### Giải
 Khi tải về được file ảnh `car_crash.png`
 
 Sử dụng stegonline thì plane 0 thu được bức hình chứa rất nhiều ký tự. Trong khi kênh blue và red thì chỉ là các ký tự đè lên nhau thì kênh alpha và green có thể thấy mã hóa base64 hơi mờ ở giữa và bị nhòe
