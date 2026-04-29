@@ -13,6 +13,7 @@ Sau khi tải về và giải nén thì được:
 Kiểm tra metadata của file `PBES512.pdf` không có gì nên thử sử dụng `binwalk` để trích xuất các file bên trong. Sử dụng `grep` để thử tìm password thì k thu được gì. Bên trong có file `_PBES-512.pdf.extracted/1A92.zip`, giải nén thì có file `another_part.zip` là file zip cần mật khẩu và file `another_pass`
 
 Đọc file `another_pass` thì có mật khẩu cho file zip là `verysecretpassword`, mở `another_part.zip` thì được `another_part.txt` và bên trong là password
+
 **HIDDEN_MSG_4_{85add2c0}**
 
 Đọc các file dạng plain text document còn lại thì tìm thấy password thứ 2 trong file `66`
