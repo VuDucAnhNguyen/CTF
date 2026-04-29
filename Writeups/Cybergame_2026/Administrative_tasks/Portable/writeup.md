@@ -44,7 +44,7 @@ pdfimages -all PBES-512.pdf extracted_img/image
 ```
 ![image](img7.png)
 
-Do cũng đã biết những ký tự của password1 nên mình viết script để bruteforce theo các ký tự đã biết luôn. Password đầy đủ theo thứ tự 4321 của `README3.txt` đã có phần 432, phần 1 sẽ thử các tổ hợp từ các ký tự đã biết thì tìm ra được password đầy đủ `85add2c00a6899cfb100bf914abcc69f`
+Do cũng đã biết những ký tự của password1 nên mình viết script để bruteforce theo các ký tự đã biết luôn. Password đầy đủ theo thứ tự 4321 của `README3.txt` đã có phần 432, phần 1 sẽ thử các chỉnh hợp từ các ký tự đã biết thì tìm ra được password đầy đủ `85add2c00a6899cfb100bf914abcc69f`
 ``` python
 import zipfile
 from itertools import permutations
