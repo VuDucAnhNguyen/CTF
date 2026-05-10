@@ -5,7 +5,7 @@ Các ký tự Zerowidth này được chèn xen giữa vào các ký tự thư�
 VD: [There's no room left](../../Writeups\CIT_2026\Steganography\Theres_no_room_left\writeup.md)
 
 ### Sử dụng white space encoding
-Sử dụng công cụ [poltergeist](https://github.com/Shell-Company/poltergeist) để decodeđể giải mã
+Sử dụng công cụ [poltergeist](https://github.com/Shell-Company/poltergeist) để decode
 
 #### Cài đặt poltergeist
 Cài đặt Golang và poltergeist
