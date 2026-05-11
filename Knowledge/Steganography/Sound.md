@@ -35,4 +35,20 @@ Phần bắt đầu của cuộc điện thoại là DTMF (Dual-Tone Multi-Frequ
 sox [file_name] -r 22050  [output_name]
 multimon-ng -c -a DTMF -t [output_type] [output_name]
 ```
+### Sử dụng steghide/ stegseek
+file có thể được giấu sử dụng `steghide` nhưng sẽ cần passphrase để có thể trích xuất
+```
+steghide --extract -sf [file_name]
+```
+<br>
+
+passphrase này có thể bruteforce sử dụng `stegseek`
+```
+stegseek --crack [file_name] rockyou.txt
+```
+
+### Kỹ thuật channel subtraction
+Đối với âm thanh định dạng stereo, file âm thanh gồm 2 track chồng lên nhau là left và right để tái tạo âm thanh nhằm tạo hiệu ứng âm thanh trong không gian. Kỹ thuật channel subtraction bằng cách lấy 1 kênh trừ đi kênh còn lại, có thể giúp ẩn thông điệp.
+
+VD: [Stegmaxxing](../../Writeups/BKISC_CTF_2026/Miscellaneous/Stegmaxxing/writeup.md)
 

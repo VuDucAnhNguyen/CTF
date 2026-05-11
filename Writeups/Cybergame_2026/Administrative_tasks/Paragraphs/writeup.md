@@ -21,7 +21,7 @@ Xem nội dung của file `.docm` tại `_Base64.docm.extracted/word/document.xm
 
 **HIDDEN_MSG_2_{47d0241a}**
 
-Sau khi giải mã thì có 2 file `vbaData.xml` và `vbaProject.bin`. Đọc nội dung `vbaData.xml` thì thấy đây là macro tự động kích hoạt `vbaProject.bin`, sử dụng olevaba để xem thì có được password
+Sau khi giải mã thì có 2 file `vbaData.xml` và `vbaProject.bin`. Đọc nội dung `vbaData.xml` thì thấy đây là macro tự động kích hoạt `vbaProject.bin`, sử dụng olevba để xem thì có được password
 ```
 olevba vbaProject.bin
 ```

@@ -46,3 +46,16 @@ zsteg [file_name]
 flag có thể được giấu trong ảnh bằng cách thay đổi các bit cuối của các kênh màu dẫn nên khó có thể nhận ra bằng mắt thường
 
 VD: [Cool car](../../Writeups/CIT_2026/Steganography/Cool_car/writeup.md)
+
+### Kỹ thuật EMD (Exploiting Modification Direction)
+Thay vì chỉ tác động vào một pixel độc lập (như phương pháp LSB truyền thống), EMD xem xét một nhóm gồm \(n\) pixel như một đơn vị và chỉ thay đổi tối đa một đơn vị giá trị của một pixel duy nhất trong nhóm đó để nhúng thông tin.
+
+Nhóm pixel: Một nhóm gồm \(n\) pixel được ký hiệu là \((x_1, x_2, ..., x_n)\).
+
+Hệ cơ số: EMD nhúng dữ liệu dưới dạng hệ cơ số \(2n+1\).
+
+Công thức hàm trích xuất:
+
+$$f(x_1, x_2, ..., x_n) = \left( \sum_{i=1}^{n} x_i \cdot i \right) \bmod (2n + 1)$$
+
+VD: [Stegmaxxing](../../Writeups/BKISC_CTF_2026/Miscellaneous/Stegmaxxing/writeup.md)

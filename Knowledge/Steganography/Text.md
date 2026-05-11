@@ -13,16 +13,23 @@ Cài đặt Golang và poltergeist
 sudo apt update && sudo apt install golang-go -y
 go install github.com/shell-company/poltergeist/cmd/poltergeist@latest
 ```
+<br>
+
 Thêm dòng này vào cuối file `~/.zshrc` để chạy trực tiếp trong terminal
 ```
 export PATH=$PATH:$(go env GOPATH)/bin
 ``` 
+
+<br>
+Chạy `source ~/.zshrc` để áp dụng ngay lập tức
 
 #### Sử dụng
 Encode:
 ```
 poltergeist -encode -file [file_name]
 ```
+<br>
+
 Decode:
 ```
 poltergeist -decode -file [file_name]
