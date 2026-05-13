@@ -36,7 +36,7 @@ print(plaintext)
 
 ```
 
-Chạy cmd để xem Alternate Data Streams thì thấy có stream `secret` được đính kèm vào file `script.py`. Trích xuất dữ liệu từ luồng ẩn này re `encrypt.bin` và chạy script python thì được flag
+Chạy cmd để xem Alternate Data Streams thì thấy có stream `secret` được đính kèm vào file `script.py`. Trích xuất dữ liệu từ luồng ẩn này ra `encrypt.bin` và chạy script python thì được flag
 ```cmd
 dir /r
 expand decrypt.py:secret encrypt.bin

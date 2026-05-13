@@ -19,7 +19,32 @@ Người dùng trên máy sẽ có thiết lập riêng (hình nền, icon, lị
 ## Các phương pháp và công cụ điều tra registry key
 ### Sử dụng các tool để lấy mật khẩu người dùng
 Link: [mimikatz & hashcat](https://www.nitttrchd.ac.in/imee/Labmanuals/Password%20Cracking%20of%20Windows%20Operating%20System.pdf)
+#### mimikatz
 
+Trích xuất hash mật khẩu của user qua SYSTEM và SAM
+```
+lsadump::sam /system:[SYSTEM_file]
+/SAM:[SAM_file]
+```
+<br>
+
+Lấy masterkey từ `C:\Users\xxx\AppData\Roaming\Microsoft\Protect\<SID>\` 
+```
+dpapi::masterkey /in:[masterkey_path] /sid:[sid] /password:[password]
+```
+<br>
+
+Dùng masterkey tìm được để giải mã file blob (hex header: `0100 0000`) để tìm được khóa ứng dụng
+```
+dpapi::blob /in:[blob_file] /masterkey:[masterkey]
+```
+
+VD: [Homework](../../Writeups/BKISC_CTF_2026/Forensics/Homework/writeup.md)
+
+
+<br>
+
+#### impacket-secretsdump
 Trên kali linux có thể sử dụng công cụ `impacket-secretsdump` để thay thế mimikatz
 ```
 impacket-secretsdump -sam [SAM_file] -system [SYSTEM_file] local
@@ -33,6 +58,8 @@ tham số `local` để thông báo phân tích ngoại tuyến. Sau khi chạy 
 | `ccf9155e3e7db453aad3b435b51404ee` | LM Hash - đây là mã băm theo chuẩn băm cũ (rất yếu) |
 | `3dbde697d71690a769204beb12283678` | NTLM Hash - đây là mã băm thực tế Windows đang dùng |
 
+
 ### Một số tool khác:
 - FTKImager
 - RegistryExplorer
+- credentialsviewfile
