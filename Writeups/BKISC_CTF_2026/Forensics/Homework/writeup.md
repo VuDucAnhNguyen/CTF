@@ -33,10 +33,12 @@ dpapi::blob /in:C:zoom_blob /masterkey:416028ce358926baf81aae4bc79ef097efc76d999
 passphrase: **ncj4HN14EMgmf1tuPqAv0FvYRXzhql5M+8bZf3/sv1k=**
 
 Mình thử mở khóa cả `zoomus.enc.db` và `zoommeeting.enc.db` thì tại `zoommeeting.enc.db` tìm được lịch sử chat trong buổi học online dẫn đến link drive bài tập
+
 ![image](img6.png)
 ![image](img7.png)
 
 Tải file `homework.rar` từ Google Drive và giải nén bằng Winrar thì được `homework.jpg` và `key.txt`. Ảnh homework là ảnh rickroll còn `key.txt` thì chứa gợi ý cho bước tiếp theo
+
 ![image](homework.jpg)
 ```
 You have learnt magic in recent online course, the magic that turn a JPG to a PNG, find the key here and do the homework !!!
@@ -44,6 +46,7 @@ All you need is in this rar file.
 ```
 
 Khi kiểm tra ADS thì tìm được luồng `key.txt:secret`, trích xuất luồng này thì tìm được hướng dẫn mã hóa AES
+
 ![image](img8.png)
 ```
 notepad key.txt:secret 
