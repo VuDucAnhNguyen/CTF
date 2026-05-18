@@ -1,6 +1,6 @@
 | Định dạng | Chữ ký (đầu file, hex) | Chữ ký cuối file (footer) | Phần mở rộng |
 | --- | ---------------------------- | ---------- | ------------- |
-|  PNG  | `89 50 4E 47 0D 0A 1A 0A` | Chunk `IEND` + CRC: <br> `00 00 00 00 49 45 4E 44 AE 42 60 82` | .png |
+|  PNG  | `89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52` | Chunk `IEND` + CRC: <br> `00 00 00 00 49 45 4E 44 AE 42 60 82` | .png |
 |  JPEG  | `FF D8 FF E0` <br> `FF D8 FF E1` (JFIF/Exif) | `FF D9` | .jpg, .jpeg, .jfif |
 |  PDF  | `25 50 44 46` (“%PDF”) | `25 25 45 4F 46` (`%%EOF`) | .pdf |
 |  ZIP  | `50 4B 03 04` (”PK/03/04”) <br> `50 4B 05 06` <br> `50 4B 07 08`  | EOCD signature: `50 4B 05 06` | .zip, .jar, .apk, <br> .docx, .pptx, .xlsx… |
