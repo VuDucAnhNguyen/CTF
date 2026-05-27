@@ -52,3 +52,18 @@ stegseek --crack [file_name] rockyou.txt
 
 VD: [Stegmaxxing](../../Writeups/BKISC_CTF_2026/Miscellaneous/Stegmaxxing/writeup.md)
 
+
+### Bộ công cụ ffmpeg
+#### ffprobe
+Dùng để trích xuất và phân tích toàn bộ nội dung chi tiết của file âm thanh hoặc video (hide_banner để ẩn cấu hình của ffmpeg)
+```
+ffprobe -hide_banner [file_name]
+```
+#### ffmpeg
+Có thể sử dụng để trích xuất, chỉnh sửa các file âm thanh, video
+```
+# lệnh trích xuất file
+ffmpeg -i [file_name] -map [stream_name] -c:a copy "output_name"
+```
+
+VD: [nesting](../../Writeups/TJCTF_2026/Forensics/nesting/writeup.md)
