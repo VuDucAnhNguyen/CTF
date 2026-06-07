@@ -15,7 +15,7 @@ Repo chỉ chứa workflow `issue-comment.xml` là file định nghĩa quy trìn
 
 Có thể thấy việc nhận và in lại nội dung từ issue comment hoặc issue mà không bọc biến môi trường tạo ra điều kiện để thực hiện command injection. Đề bài cũng nói kể cả khi bị xóa đi thì vẫn để lại dấu vết nên nhiệm vụ của bài là sử dụng phần comment này để tìm lại flag chưa bị sửa đổi
 
-Do flag đã bị sửa đổi trong `/home/runner/` là thư mục gốc của chứa toàn bộ workflow và tệp tin sinh ra trong quá trình chạy, flag vẫn có thể còn trong bộ nhớ các tiến trình trong máy ảo. Thực hiện quét bộ nhớ các tiến trình trong máy ảo tìm flag và in ra dưới dạng hex để vượt qua Github Secret Masking
+Do flag đã bị sửa đổi trong `/home/runner/` là thư mục gốc của chứa toàn bộ workflow và tệp tin sinh ra trong quá trình chạy, flag vẫn có thể còn trong bộ nhớ các tiến trình trong máy ảo. Thực hiện quét bộ nhớ các tiến trình trong máy ảo tìm flag và in ra dưới dạng hex để vượt qua Github Secret Masking (base64 vẫn bị chuyển thành ***)
 ``` 
 "; sudo python3 << 'PYEOF'
 import re, base64, os, sys
