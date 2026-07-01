@@ -13,6 +13,7 @@ vol -f [file_name] [plugin]
 Một số plugin hay dùng:
 | Nhóm | Plugin | Chức năng |
 | - | - | - |
+|Overall Information | windows.info | Lấy thông tin tổng quan về file dump (OS, kiến trúc CPU, thời gian dump) |
 | Process Analyst | windows.pslist | Liệt kê các tiến trình đang chạy bằng cách duyệt quay Doubly-Linked List của Kernel (ActiveProcessLinks) |
 | | windows.pstree | Hiển thị các tiến trình dưới dạng cây (Cha - Con).Hiển thị các tiến trình dưới dạng cây (Cha - Con)|
 | | windows.psscan | Tìm các tiến trình mới bị tắt hoặc bị ẩn đi |
