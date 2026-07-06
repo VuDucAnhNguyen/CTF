@@ -20,4 +20,5 @@ Phân tích `of.img` thì thấy trong file slack có 2 file trong đó gồm 1 
 ![image](img3.png)
 
 file zip thì cần mật khẩu để giải nén và mật khẩu chính từ mảnh giấy trong ảnh khôi phục được: `0x0kira1337`. Giải nén và lấy được flag
+
 FLAG: **NHNC{n0w_y0u_kn0w_h0w_t0_f0r3ns1c_0x00000Easyyyyyyyyy}**

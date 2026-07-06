@@ -44,3 +44,6 @@ Ghép các mảnh lại:
 
 ROT47 thì được flag
 FLAG: **V1T{1_h4v3_4_b1g_h4rd_r005t3r}**
+
+>[!Note] 
+>Bài này có thể giải mà không cần reverse: [link](https://github.com/v1tnamese/V1t_CTF-2026/blob/main/Forensics/Green%20Goblin/Writeup-GreenGoblin.md)
