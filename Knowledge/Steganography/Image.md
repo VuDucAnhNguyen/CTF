@@ -96,3 +96,9 @@ Công thức hàm trích xuất:
 $$f(x_1, x_2, ..., x_n) = \left( \sum_{i=1}^{n} x_i \cdot i \right) \bmod (2n + 1)$$
 
 VD: [Stegmaxxing](../../Writeups/BKISC_CTF_2026/Miscellaneous/Stegmaxxing/writeup.md)
+
+### Stepic
+Là một công cụ dòng lệnh bằng Python dùng để ẩn giấu văn bản hoặc dữ liệu vào trong một bức ảnh bằng cơ chế LSB
+```
+stepic -d -i [file_name]  
+```
