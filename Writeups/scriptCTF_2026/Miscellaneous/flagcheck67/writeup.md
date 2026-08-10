@@ -16,7 +16,7 @@ print('wrong' if num < 67676767 or 676767676767676767%(6767676767676767676767676
 
 Chương trình sẽ in ra flag nếu tất cả các điều kiện không thỏa mãn. Trong đó có điều kiện chia hết phụ thuộc vào random khiến việc tìm 1 số không thỏa mãn các điều kiện còn lại cũng khó có thể thỏa mãn điều kiện random.
 
-Do chương trình không có kiểm tra input đầu vào trước khi chuyển về float dẫn đến có thể nhập 1 số toàn 6 và 7 vô cùng lớn để dẫn đến tràn số, python traceback và in ra dòng lệnh gây lỗi có chứa flag
+Để vượt qua điều kiện random, ta có thể nhập 1 số đủ lớn để khiến phép chia `6767676767676767676767676767/num` có kết quả làm tròn về 0 dẫn đến phép lấy dư báo lỗi chia cho 0 và in ra câu lệnh có chứa flag (số này cần nhỏ hơn giới hạn của float để tránh tràn số và traceback về dòng `num = float(inp)`)
 
 >[!Note] 
 > Với biến dạng int, long long python lưu trữ dưới dạng 1 mảng các chữ số, có thể cấp phát thêm nên không bị tràn số khi bộ nhớ RAM vẫn còn chỗ. Kiểu float được triển khai như double của C++, được ánh xạ trực tiếp vào thanh ghi phần cứng dẫn đến khi số quá lớn gây tràn số
