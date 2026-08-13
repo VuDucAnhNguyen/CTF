@@ -106,3 +106,13 @@ Là một công cụ dòng lệnh bằng Python dùng để ẩn giấu văn b�
 ```
 stepic -d -i [file_name]  
 ```
+
+### Arnold's cat map
+Kỹ thuật xáo ảnh bằng cách trượt pixel dựa vào công thức sau:
+- công thức không tham số:
+$$\begin{pmatrix} x_{n+1} \\ y_{n+1} \end{pmatrix} = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} x_n \\ y_n \end{pmatrix} \pmod 1$$
+
+- công thức có tham số (a, b):
+$$\begin{pmatrix} x_{n+1} \\ y_{n+1} \end{pmatrix} = \begin{pmatrix} 1 & a \\ b & ab + 1 \end{pmatrix} \begin{pmatrix} x_n \\ y_n \end{pmatrix} \pmod 1$$
+
+VD: [RecoverMyPet](../../Writeups/scriptCTF_2026/Forensics/RecoverMyPet/writeup.md)

@@ -102,6 +102,7 @@ coreXY('plottergeist.pcap')
 
 FLAG: **hacktheon2026{the_plotter_reveals_its_secret_through_sound}**
 
+<br>
 
 >[!Note]
 > Bài này có thể vẽ bằng matplot mô phỏng chuyển động của coreXY bằng script dưới đây tuy nhiên kết quả sẽ khó nhìn
