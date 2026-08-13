@@ -36,8 +36,18 @@ Jump Lists do một số ứng dụng tự quản lý.
 Thường được lưu tại: `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\`
 
 ## Các phương pháp và công cụ điều tra Jump Lists
-- strings
-- JLECmd.exe (Eric Zimmerman's tools)
-- oletools (olebrowse)
+### JLECmd.exe (Eric Zimmerman's tools)
+Công cụ phân tích Jump Lists, thực hiện trích xuất các file `.lnk` bên trong và tổng hợp dữ liệu
+
+Trích xuất dữ liệu và xuất file excel:
+
+```
+.\JLECmd.exe -f "[file_name]" --csv "[output_folder]"
+```
+
 
 VD: [TranscendentRenovation](../../Writeups/L3akCTF_2026/Forensics/TranscendentRenovation/writeup.md)
+
+### Một số tool khác:
+- strings
+- oletools (olebrowse)
