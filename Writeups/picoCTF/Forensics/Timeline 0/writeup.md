@@ -7,7 +7,7 @@ fls -r -m / partition4.img | mactime -b > timeline.txt
 
 Đọc file `timeline.txt` thì thấy có 1 file lạ được tạo từ năm 1985
 => Thực hiện điều tra sâu hơn file này
-![image](timeline.png)
+![image](img1.png)
 
 Trích xuất nội dung file này thì thu được 1 đoạn dữ liệu được mã hóa bằng base64, thực hiện giải mã
 ```

@@ -76,7 +76,7 @@ VD: [Polar Fragment](../../Writeups/V1T_2026/Forensics/Polar_Fragment/writeup.md
 ### Chèn byte xen giữa các byte của ảnh
 Byte của file được giấu nằm xen giữa các byte ảnh. Thường được dùng cho các định dạng ảnh không nén (.bmp) do dữ liệu điểm ảnh pixel được lưu tuyến tính nên ảnh chỉ nhiễu chứ không hỏng như .png và .jpg
 
-VD: [Invisible WORDs](../../Writeups/picoCTF/Invisible_WORDs/writeup.md)
+VD: [Invisible WORDs](../../Writeups/picoCTF/Forensics/Invisible_WORDs/writeup.md)
 
 ### Sử dụng zsteg (dành cho .png và .bmp)
 ```
