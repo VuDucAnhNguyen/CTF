@@ -3,7 +3,7 @@
 I made a new password authentication program that even shows you the password you entered saved in the database! Isn't that cool?
 
 ### Giải
-Đề bài cho file `system.out` là file thực thi ELF. Sử dụng IDA để dịch ngược. Tại hàm main, khai báo mảng `dest` char 90 ký tự được cấp phát động và lưu ký tự của mảng `obf_bytes` được XOR với `0xAA` từ index 60 đến 72
+Đề bài cho file `system.out` là file thực thi ELF. Sử dụng IDA để dịch ngược. Tại hàm `main`, khai báo mảng `dest` char 90 ký tự được cấp phát động và lưu ký tự của mảng `obf_bytes` được XOR với `0xAA` từ index 60 đến 72
 ![image](img1.png)
 
 Chương trình tiếp tục nhận password từ người dùng và để người dùng tự khai báo mật khẩu dài bao nhiêu rồi lưu mật khẩu này vào `dest` và in `dest` dưới dạng số theo khai báo độ dài của người dùng. Điều này có thể dẫn đến lỗ hổng heartbleed
