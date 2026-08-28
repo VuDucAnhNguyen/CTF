@@ -27,6 +27,12 @@ Khi Client truy cập một Server thành viên trong Domain:
 
 - DC kiểm tra với cơ sở dữ liệu ntds.dit và trả kết quả thành công/thất bại về cho Server.
 
+### NTLMv2 hash
+có thể được dựng lại theo format và dùng hashcat mode 5600 để crack:
+```
+User::Domain:ServerChallenge:NTProofStr:NTLMv2Response(bỏ 16 byte đầu)
+```
+
 ## Các kỹ thuật tấn công NTLM
 ### NTLM Relay Attack
 - Kẻ tấn công đứng giữa chặn bắt gói tin xác thực  từ máy nạn nhân và chuyển tiếp (relay) nguyên vẹn sang một máy chủ dịch vụ khác (như SMB, HTTP, LDAP, AD CS).
