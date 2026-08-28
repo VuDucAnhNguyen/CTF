@@ -5,11 +5,11 @@ NTLM (NT LAN Manager) là một bộ giao thức xác thực bảo mật kế th
 
 Trường hợp 1: Xác thực Standalone / Local (Client $\leftrightarrow$ Server)
 
-1. (Negotiate): Client gửi gói tin khởi tạo kết nối, thông báo các tính năng bảo mật được hỗ trợ.
+1. Negotiate: Client gửi gói tin khởi tạo kết nối, thông báo các tính năng bảo mật được hỗ trợ.
 
-2. Message (Challenge): Server tạo ra một chuỗi ngẫu nhiên (Server Challenge / Nonce) và gửi lại cho Client.
+2. Challenge: Server tạo ra một chuỗi ngẫu nhiên (Server Challenge / Nonce) và gửi lại cho Client.
 
-3. Message (Authenticate):
+3. Authenticate:
 
     - Client lấy NT hash của mật khẩu (sinh từ MD4(UTF-16LE(password))), kết hợp cùng Server Challenge + Client Challenge + Timestamp để tính ra giá trị phản hồi NTLMv2 Response.
 
