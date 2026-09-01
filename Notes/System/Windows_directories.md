@@ -25,6 +25,22 @@ Thư mục `C:\Users\<User>\AppData` (thường bị ẩn) chia làm 3 nhóm ch�
 |Windows Jump Lists	|`%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations`	| Lưu danh sách tệp/thư mục được mở gần đây hoặc ghim theo từng ứng dụng <br> Chi tiết: [Jump_Lists.md](Jump_Lists.md) |
 | LNK Files | `%APPDATA%\Microsoft\Windows\Recent` | Shortcut tự động tạo khi mở file; chứa đường dẫn gốc, volume serial và timestamp |
 
+### NTFS File System Metadata
+- `$MFT` (Master File Table):
+    - Cơ chế lưu trữ: Phân bổ cố định 1024 bytes/bản ghi quản lý toàn bộ tệp và thư mục trên NTFS.
+    - Cấu trúc `$DATA` (0x80):
+        - Resident Data: Nội dung file nhỏ (thường < 700–800 bytes) lưu trực tiếp trong bản ghi MFT, không cấp phát cluster ngoài đĩa.
+        - Non-Resident Data: File lớn hơn được lưu ở cluster ngoài; thuộc tính 0x80 chỉ lưu con trỏ cấp phát `Data Runs` (VCN/LCN).
+
+- Alternate Data Streams (ADS):
+    - Cho phép một file chứa nhiều luồng `$DATA` độc lập bên cạnh luồng mặc định (`<filename>:<stream_name>`).
+    - Lưu trữ Metadata hệ thống (như luồng `:Zone.Identifier` lưu thông tin Mark-of-the-Web), hash, hoặc toàn bộ payload nhị phân/script (`.exe`, `.dll`, `.vbs`).
+    - Kích thước file hiển thị trên Windows Explorer không đổi dù luồng phụ chứa dữ liệu; payload có thể được nạp và thực thi trực tiếp qua các tiến trình hệ thống (`wscript.exe`, `rundll32.exe`).
+
+- `$UsnJrnl:$J` (Update Sequence Number Journal - Stream $J):
+    - Cơ chế lưu trữ: Ghi nhật ký tuần tự (append-only) các sự kiện thay đổi trạng thái tệp theo thời gian thực.
+    - Dữ liệu thu thập: Tên tệp, File Reference Number, Parent Entry Number, timestamp và Update Reasons (`FileCreate`, `FileDelete`, `DataExtend`, `Close`, v.v.).
+
 ## Các phương pháp và công cụ điều tra thư mục Windows
 ### ChromeCacheView.exe
 - Là công cụ hỗ trợ xem và trích xuất cache trình duyệt và ứng dụng sử dụng nhân Chromium
