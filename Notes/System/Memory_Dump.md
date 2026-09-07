@@ -10,7 +10,6 @@
   * `E` (`UNSIGNED_MODULE`): Module không có chữ ký số điện tử hợp lệ hoặc cơ chế kiểm tra chữ ký bị vô hiệu hóa.
   * `P` (`PROPRIETARY`): Module sử dụng giấy phép mã nguồn đóng, không tương thích với giấy phép GPL.
 
-
 #### 2. Giao tiếp & Trừu tượng hóa Tài nguyên (I/O & Syscall Interface)
 * **File Descriptor (FD):** Chỉ số nguyên không âm đại diện cho một kênh nhập/xuất (I/O) đang mở của một tiến trình, được quản lý trong bảng mô tả tệp (`task_struct->files`). Theo quy chuẩn: FD `0` là luồng nhập chuẩn (stdin), FD `1` là luồng xuất chuẩn (stdout), FD `2` là luồng lỗi chuẩn (stderr). Khi cả ba FD này cùng trỏ tới một socket mạng TCP/IP, tiến trình đó đang vận hành theo cơ chế chuyển hướng I/O của Reverse Shell.
 * **Syscall Table (`sys_call_table`):** Mảng chứa các con trỏ hàm trỏ tới địa chỉ bộ nhớ của các hàm xử lý Lời gọi hệ thống (System Call handler như `sys_read`, `sys_write`, `sys_getdents64`). Bảng này là điểm tiếp nhận và chuyển tiếp các yêu cầu dịch vụ từ User Space (Ring 3) vào Kernel Space (Ring 0).
