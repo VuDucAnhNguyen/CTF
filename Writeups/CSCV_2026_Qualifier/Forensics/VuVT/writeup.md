@@ -8,14 +8,14 @@ Một bộ dữ liệu được thu thập từ máy tính gặp sự cố.
 Hãy điều tra xem chuyện gì đã thực sự xảy ra và tìm ra thông tin cần thiết để khôi phục kết quả cuối cùng.
 
 ### Giải
-Sau khi tải về và giải nén thì được file gói tin mạng `network.pcapng`, bộ nhớ `mem.raw`, log `sysmon.evtx`, thư mục `Users` trong đó có chứa cáci file bị mã hóa `.enc` tại `Users\Public\MetaData\Data`. Tiến hành parse `sysmon.evtx` bằng EvtxCmd và dùng TimelineExplorer để phân tích.
+Sau khi tải về và giải nén thì được file gói tin mạng `network.pcapng`, bộ nhớ `mem.raw`, log `sysmon.evtx`, thư mục `Users` trong đó có chứa các file bị mã hóa `.enc` tại `Users\Public\MetaData\Data`. Tiến hành parse `sysmon.evtx` bằng EvtxCmd và dùng TimelineExplorer để phân tích.
 
 Có thể thấy người dùng đã bị ransomware khiến cho các file bị mã hóa. Từ log sysmon, tìm các sự kiện liên quan đến file `.enc` thì thấy các file này được tạo từ tiến trình `update.exe`, pid: 2844 vào lúc `2026-08-25 04:35:06`
 ``` json
 {"EventData":{"Data":[{"@Name":"RuleName","#text":"technique_id=T1047,technique_name=File System Permissions Weakness"},{"@Name":"UtcTime","#text":"2026-08-25 04:35:06.006"},{"@Name":"ProcessGuid","#text":"bad0321b-1b79-6a8d-b600-000000000500"},{"@Name":"ProcessId","#text":"2844"},{"@Name":"Image","#text":"C:\\Users\\bkav\\Downloads\\UpdateX7A91C\\update.exe"},{"@Name":"TargetFilename","#text":"C:\\Users\\Public\\MetaData\\Data\\1337dakl.txt.enc"},{"@Name":"CreationUtcTime","#text":"2026-08-25 04:35:06.006"},{"@Name":"User","#text":"DESKTOP-7NNKNIK\\bkav"}]}}
 ```
 
-Điều tra `update.exe` thì thấy file được tạo từ `UpdateX7A91C.7z` (được tải bởi `browser_broker.exe` từ `http://192.168.56.1:1337/UpdateX7A91C.7z`). `update.exe` thực hiện mã hóa các file của người dùng và mở kết nối ngược từ `192.168.56.10:49674` tới `192.168.56.1:8080`
+Điều tra `update.exe` thì thấy file được tạo từ `UpdateX7A91C.7z` (được tải bởi `browser_broker.exe` từ `http://192.168.56.1:1337/UpdateX7A91C.7z`). `update.exe` thực hiện mã hóa các file của người dùng và mở kết nối từ `192.168.56.10:49674` tới `192.168.56.1:8080`
 ![image](img1.png)
 
 Sử dụng volatility 3 để phân tích `mem.raw`. Sử dụng lệnh `vol -f mem.raw windows.pslist` thì thấy tiến trình 2844 `update.exe` (ransomware) vẫn đang chạy. Thực hiện trích xuất file thực thi.
