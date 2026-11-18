@@ -1,4 +1,4 @@
-# Các phương pháp và công cụ ẩn tin
+# Ẩn tin trong các định dạng khác
 ## Ẩn tin vào .ELF bằng steg86
 steg86 chủ yếu khai thác các đặc điểm của tập lệnh x86 để giấu tin
 

@@ -1,4 +1,4 @@
-# Lý thuyết
+# NTLM
 NTLM (NT LAN Manager) là một bộ giao thức xác thực bảo mật kế thừa (legacy) của Microsoft, hoạt động dựa trên cơ chế thách thức - phản hồi (Challenge-Response) bằng việc sử dụng hàm băm mật khẩu (NT hash).
 
 ## Cơ chế hoạt động:
@@ -33,7 +33,7 @@ có thể được dựng lại theo format và dùng hashcat mode 5600 để cr
 User::Domain:ServerChallenge:NTProofStr:NTLMv2Response(bỏ 16 byte đầu)
 ```
 
-# Các kỹ thuật tấn công NTLM
+## Các kỹ thuật tấn công NTLM
 ## NTLM Relay Attack
 - Kẻ tấn công đứng giữa chặn bắt gói tin xác thực  từ máy nạn nhân và chuyển tiếp (relay) nguyên vẹn sang một máy chủ dịch vụ khác (như SMB, HTTP, LDAP, AD CS).
 

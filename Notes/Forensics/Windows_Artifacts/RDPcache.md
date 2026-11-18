@@ -1,4 +1,4 @@
-# Sử dụng bmc-tool cho RDP cache
+# Phân tích RDP Bitmap Cache
 Link [Github](https://github.com/ANSSI-FR/bmc-tools)
 
 bmc-tool là 1 script python giúp phân tích và trích xuất dữ liệu từ file RDP Bitmap cache ví dụ như `.bmc`, `.bin` và ánh xạ file đã được tạo trong giao thức RDP

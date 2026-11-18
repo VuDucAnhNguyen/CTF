@@ -1,4 +1,4 @@
-# Lý thuyết
+# Điều tra Registry
 ## Registry key hệ thống
 Đây là các file chứa cấu hình cho toàn bộ máy tính (phần cứng, phần mềm đã cài, thiết lập hệ thống). Các file này nằm trong thư mục `C:\Windows\System32\config\`, trong đó có các file sau:
 
@@ -16,7 +16,7 @@ Cơ chế DPAPI (Data Protection API) của Windows:
 ## Registry key người dùng
 Người dùng trên máy sẽ có thiết lập riêng (hình nền, icon, lịch sử file...). Dữ liệu này nằm ngay trong file `C:\Users\<Tên_User>\NTUSER.DAT`
 
-# Các phương pháp và công cụ điều tra registry key
+## Các phương pháp và công cụ điều tra registry key
 ## Sử dụng các tool để lấy mật khẩu người dùng
 Link: [mimikatz & hashcat](https://www.nitttrchd.ac.in/imee/Labmanuals/Password%20Cracking%20of%20Windows%20Operating%20System.pdf)
 ### mimikatz
@@ -39,7 +39,7 @@ Dùng masterkey tìm được để giải mã file blob (hex header: `0100 0000
 dpapi::blob /in:[blob_file] /masterkey:[masterkey]
 ```
 
-VD: [Homework](../../Writeups/BKISC_CTF_2026/Forensics/Homework/writeup.md)
+VD: [Homework](../../../Writeups/BKISC_CTF_2026/Forensics/Homework/writeup.md)
 
 
 <br>

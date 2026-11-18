@@ -1,4 +1,4 @@
-# Ẩn tin trong các công cụ Office
+# Phân tích tệp Office và PDF
 ## Macro VBA attack
 Tấn công bằng Macro VBA là kỹ thuật tin tặc nhúng mã độc vào tệp Office (.docm, .xlsm), tự động thực thi khi người dùng bật Macro để tải xuống phần mềm độc hại, đánh cắp dữ liệu hoặc mã hóa tệp tin
 
@@ -24,7 +24,7 @@ pdf-parser -o [object_number] [file_name]
 ### pdfimages
 pdfimages là công cụ giúp trích xuất toàn bộ ảnh từ file PDF ra thành các file ảnh riêng biệt
 
-rích xuất tất cả ảnh sang định dạng phù hợp (-all)
+Trích xuất tất cả ảnh sang định dạng phù hợp (-all)
 ```
 pdfimages -all [file_name] [des_path]
 ```

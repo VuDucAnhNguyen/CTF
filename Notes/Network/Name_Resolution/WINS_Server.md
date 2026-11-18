@@ -1,4 +1,4 @@
-# Lý thuyết
+# WINS Server
 WINS Server (Windows Internet Name Service) là máy chủ phân giải tên NetBIOS tập trung do Microsoft phát triển 
 trong thời kỳ đầu trong hệ thống mạng Windows
 

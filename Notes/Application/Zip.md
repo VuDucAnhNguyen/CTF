@@ -1,4 +1,4 @@
-# File .zip
+# Định dạng ZIP
 ## Cấu trúc 
 ### Tổng quát
 Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính (linear), cho phép ghi hoặc trích xuất dữ liệu một cách tuần tự và hỗ trợ khôi phục dữ liệu ngay cả khi file bị hỏng một phần.
@@ -65,8 +65,8 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
 ## Thuật toán nén
 - Store: File không được nén
 - Deflate: Sử dụng LZ77 + Huffman coding, nhanh và hiệu quả, là thuật toán nén mặc định của zip
-- Deflate64: phiên bản cải thiện của Deflate nhưng độ tuơng thích và hỗ trợ hạn chế
-- BZIP2: khả năng nén tốt hơn nhờ dùng Burrows-Wheeler transform nhưng tốc độ nén chậm hơn chậm hơn Deflate
+- Deflate64: phiên bản cải thiện của Deflate nhưng độ tương thích và hỗ trợ hạn chế
+- BZIP2: khả năng nén tốt hơn nhờ dùng Burrows-Wheeler transform nhưng tốc độ nén chậm hơn Deflate
 - LZMA: Tỷ lệ nén cao nhưng tốn nhiều tài nguyên khi nén, là lõi cho 7z
 - PPMd - Statistical compression tốt cho text nhưng chậm và tốn RAM
 

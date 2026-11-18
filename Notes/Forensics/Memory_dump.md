@@ -1,4 +1,4 @@
-# Lý thuyết
+# Phân tích bộ nhớ
 ## Linux
 
 ### 1. Cấu trúc Nhân & Mở rộng (Kernel Core & Extension)
@@ -20,13 +20,13 @@
 * **Tracepoint:** Điểm thăm dò tĩnh (static probe) được đặt cố định trong mã nguồn kernel bằng macro. Khi được kích hoạt, tracepoint cho phép đăng ký hàm thăm dò (probe function/callback) để đọc các biến và tham số nội bộ tại thời điểm thực thi mà không làm thay đổi luồng điều khiển của hàm gốc.
 * **Centralized Callback Function:** Hàm xử lý sự kiện tập trung (dispatcher/callback) được đăng ký với framework truy vết (như Ftrace) để tiếp nhận toàn bộ các lời gọi hàm bị can thiệp. Thay vì gán từng hàm bị hook với một hàm độc lập, hệ thống chuyển toàn bộ luồng thực thi về hàm này; tại đây, con trỏ lệnh gốc (`ip`) được kiểm tra để xác định danh tính hàm đang gọi, thực hiện lưu trữ trạng thái thanh ghi CPU và chuyển tiếp luồng thực thi tới hàm thay thế tương ứng.
 
-# Các phương pháp và công cụ điều tra bộ nhớ RAM
-## strings + grep
+## Các phương pháp và công cụ điều tra bộ nhớ RAM
+### strings + grep
 Để đọc những chuỗi trong RAM:
 - Đối với một số ứng dụng, web,.. dữ liệu được lưu dưới dạng  UTF-8, ASCII nên có thể dùng `strings`
 - Đối với Cấu trúc Kernel & OS Internals, file thực thi PE metadata, biến môi trường thì được lưu dưới dạng Little-Endian 16-bit nên cần dùng `strings -el`
 
-## Volatality 3
+### Volatility 3
 Đây là những kỹ thuật cơ bản và phổ biến nhất, sử dụng các plugin được tích hợp sẵn trong Volatility Framework để tự động trích xuất thông tin có cấu trúc.
 
 ```
@@ -35,7 +35,7 @@ vol -f [file_name] [plugin]
 
 Symbol Table (bảng biểu tượng) là thành phần cốt lõi giúp công cụ hiểu được cấu trúc dữ liệu nhị phân bên trong một bản dump RAM (tên cấu trúc dữ liệu, kích thước, độ lệch dữ liệu). Symbol Table cung cấp toàn bộ bản đồ giải mã này dưới định dạng ISF (Intermediate Symbol Format) — bản chất là các file JSON (hoặc nén .json.xz). Để nạp symbol table thì cần nạp vào `volatility3/framework/symbols/`
 
-### Windows
+#### Windows
 
 Một số plugin hay dùng:
 
@@ -60,7 +60,7 @@ VD: [Green Goblin](../../Writeups/V1T_2026/Forensics/Green_Goblin/writeup.md)
 
 ---
 
-### Linux
+#### Linux
 
 Một số plugin hay dùng:
 

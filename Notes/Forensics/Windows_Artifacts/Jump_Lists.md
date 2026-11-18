@@ -1,4 +1,4 @@
-# Lý thuyết
+# Điều tra Jump Lists
 Jump Lists là một cơ chế của Windows dùng để lưu lịch sử và thông tin truy cập của người dùng đối với từng ứng dụng. 
 
 VD: Khi bạn nhấp chuột phải vào biểu tượng của một ứng dụng trên Taskbar hoặc Start Menu, bạn sẽ thấy danh sách các file gần đây hoặc được ghim, đây chính là Jump Lists.
@@ -14,7 +14,7 @@ VD: Khi bạn nhấp chuột phải vào biểu tượng của một ứng dụn
     - MAC Address của ổ mạng (đôi khi)
     - thông tin Shortcut (LNK)
     - AppID
-- Jump Lists thực chất là OLE Compound File (OLE CF) bên trong chứa nhiều stream, môi stream là một file LNK (shortcut)
+- Jump Lists thực chất là OLE Compound File (OLE CF) bên trong chứa nhiều stream, mỗi stream là một file LNK (shortcut)
     - DestList lưu trữ: 
         - Entry ID
         - AppID
@@ -35,7 +35,7 @@ Jump Lists do một số ứng dụng tự quản lý.
 
 Thường được lưu tại: `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\`
 
-# Các phương pháp và công cụ điều tra Jump Lists
+## Các phương pháp và công cụ điều tra Jump Lists
 ## JLECmd.exe (Eric Zimmerman's tools)
 Công cụ phân tích Jump Lists, thực hiện trích xuất các file `.lnk` bên trong và tổng hợp dữ liệu
 
@@ -46,7 +46,7 @@ Trích xuất dữ liệu và xuất file excel:
 ```
 
 
-VD: [TranscendentRenovation](../../Writeups/L3akCTF_2026/Forensics/TranscendentRenovation/writeup.md)
+VD: [TranscendentRenovation](../../../Writeups/L3akCTF_2026/Forensics/TranscendentRenovation/writeup.md)
 
 ## Một số tool khác:
 - strings

@@ -1,4 +1,4 @@
-# Lý thuyết
+# Ẩn tin trong ảnh
 ## Ảnh .PNG
 ### Cấu trúc
 Ảnh PNG được chia thành các chunk dữ liệu, toàn bộ các trường dữ liệu số nguyên của PNG đều dùng định dạng Big-endian. Mỗi chunk dữ liệu có cấu trúc gồm các trường
@@ -23,7 +23,7 @@ Chunk đầu tiên trong file ảnh, chứa cấu hình của file ảnh và tr�
 | Byte 13	| Interlace Method | Phương thức hiển thị ảnh quét dòng: <br> • 0: Không sử dụng (Quét từ trên xuống dưới) <br> • 1: Sử dụng Adam7 interlace (Ảnh hiện mờ rồi nét dần khi tải chậm) |
 
 ### IDAT
-Khối này chứa dữ liệu pixel thực tế của bức ảnh đã được đi qua bộ lọc và nén lại. FIle ảnh có thể bao gồm nhiều khối IDAT liên tiếp nhau để tiện truyền tin qua mạng.
+Khối này chứa dữ liệu pixel thực tế của bức ảnh đã được đi qua bộ lọc và nén lại. File ảnh có thể bao gồm nhiều khối IDAT liên tiếp nhau để tiện truyền tin qua mạng.
 ### IEND
 Khối đánh dấu kết thúc file PNG
 
@@ -49,7 +49,7 @@ Marker `FF C0` đánh dấu khối SOF0 (Start of Frame 0) chứa các thông s�
 
 Marker `FF D9` kết thúc của ảnh JPEG
 
-# Các phương pháp và công cụ ẩn tin trong ảnh
+## Các phương pháp và công cụ ẩn tin trong ảnh
 ## Thay đổi kích thước hiển thị của ảnh
 Kích thước hiển thị của ảnh bé hơn so với kiến thức thực tế, flag có thể được giấu vào phần không được hiển thị này. Cần lưu ý kiểm tra số byte dữ liệu thô trước và sau resize để có thể khớp nhau.
 
@@ -84,7 +84,7 @@ zsteg [file_name]
 ```
 
 ## LSB, color planes
-flag có thể được giấu trong ảnh bằng cách thay đổi các bit cuối của các kênh màu dẫn nên khó có thể nhận ra bằng mắt thường
+flag có thể được giấu trong ảnh bằng cách thay đổi các bit cuối của các kênh màu nên khó có thể nhận ra bằng mắt thường
 
 VD: [Cool car](../../Writeups/CIT_2026/Steganography/Cool_car/writeup.md)
 

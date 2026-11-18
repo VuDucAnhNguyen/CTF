@@ -1,4 +1,4 @@
-# Các phương pháp và công cụ ẩn tin trong âm thanh
+# Ẩn tin trong âm thanh và video
 ## Sử dụng minimodem
 Minimodem là công cụ có thể biến văn bản thành âm thanh và ngược lại nhờ sử dụng kỹ thuật FSK (Frequency Shift Keying) thay đổi tần số để biểu diễn ký hiệu
 
@@ -10,7 +10,7 @@ minimodem [mode] -f [file_name] [Baud_rate]
 
 | mode hay dùng | ý nghĩa |
 | --- | ------- |
-| --rx | recieve, chế độ nhận để chuyển file âm thanh thành văn bản |
+| --rx | receive, chế độ nhận để chuyển file âm thanh thành văn bản |
 | --tx | transmit, chế độ phát để chuyển văn bản thành âm thanh |
 | -a | auto-carrier, tự động xác định tần số mark (bit 1) và space (bit 0) |
 | -f | file, mã hóa/ giải mã từ file |
@@ -59,7 +59,7 @@ ffprobe -hide_banner [file_name]
 ### ffmpeg
 Có thể sử dụng để trích xuất, chỉnh sửa các file âm thanh, video
 ```
-# lệnh trích xuất file
+# Lệnh trích xuất tệp
 ffmpeg -i [file_name] -map [stream_name] -c:a copy "output_name"
 ```
 

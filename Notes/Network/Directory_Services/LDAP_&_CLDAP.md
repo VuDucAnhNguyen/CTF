@@ -1,5 +1,5 @@
-# Lý thuyết
-LDAP (Lightweight Directory Access Protocol) và LDAP (Connectionless LDAP) là các giao thức chuẩn mạng dùng để truy vấn, xác thực và quản lý các đối tượng (người dùng, máy tính, nhóm quyền) trong cơ sở dữ liệu thư mục tập trung như Active Directory (AD).
+# LDAP và CLDAP
+LDAP (Lightweight Directory Access Protocol) và CLDAP (Connectionless LDAP) là các giao thức chuẩn mạng dùng để truy vấn, xác thực và quản lý các đối tượng (người dùng, máy tính, nhóm quyền) trong cơ sở dữ liệu thư mục tập trung như Active Directory (AD).
 
 ## LDAP
 LDAP hoạt động trên TCP (Port 389) hoặc LDAPS qua TLS/SSL (Port 636). Kết nối LDAP có hướng, thực hiện bắt tay 3 bước TCP, sau đó thực hiện quá trình liên kết (LDAP Bind) để xác thực phiên làm việc.

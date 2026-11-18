@@ -1,4 +1,4 @@
-# Các phương pháp và công cụ ẩn tin trong text
+# Ẩn tin trong văn bản
 ## Sử dụng các ký tự Zerowidth chèn vào thông điệp
 Các ký tự Zerowidth này được chèn xen giữa vào các ký tự thường để ẩn đi thông điệp. Có thể sử dụng công cụ  [Unicode Steganography with Zero-Width Characters](https://330k.github.io/misc_tools/unicode_steganography.html) để decode
 
