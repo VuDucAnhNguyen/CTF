@@ -1,8 +1,8 @@
-## RecoverMyPet
-### Đề bài
+# RecoverMyPet
+## Đề bài
 this is all i have left.
 
-### Giải
+## Giải
 Đề bài cho 36 ảnh có tên dạng `a_b.png` với a và b là 2 số nguyên tố cùng nhau. Kiểm tra exiftool 1 ảnh có description như sau:
 ```
 ExifTool Version Number         : 13.50

@@ -1,8 +1,5 @@
-## Lý thuyết
-
-
-## Các phương pháp và công cụ ẩn tin trong âm thanh
-### Sử dụng minimodem
+# Các phương pháp và công cụ ẩn tin trong âm thanh
+## Sử dụng minimodem
 Minimodem là công cụ có thể biến văn bản thành âm thanh và ngược lại nhờ sử dụng kỹ thuật FSK (Frequency Shift Keying) thay đổi tần số để biểu diễn ký hiệu
 
 VD: [Wiretap](../../Writeups/CIT_2026/Forensics/Wiretap/writeup.md)
@@ -24,18 +21,18 @@ Baud rate: là tốc độ bit được truyền đi mỗi giây, baud rate củ
 
 [Đọc thêm](https://manpages.ubuntu.com/manpages/noble/man1/minimodem.1.html)
 
-### Sử dụng Audacity
+## Sử dụng Audacity
 Audacity giúp quan sát dạng sóng, phân tích phổ âm (spectrogram), giúp xác định mark và space để dùng cho minimodem,..
 
 VD: [Dog barking](../../Writeups/CIT_2026/Miscellaneous/Dog_barking/writeup.md)
 
-### Phone call
+## Phone call
 Phần bắt đầu của cuộc điện thoại là DTMF (Dual-Tone Multi-Frequency - Âm kép đa tần) là hệ thống tín hiệu viễn thông để mã hóa các phím bấm (0-9, *, #). Sử dụng multimon-ng để lấy số điện thoại (cần đưa sample rate về 22050Hz để sử dụng multimon-ng)
 ```
 sox [file_name] -r 22050  [output_name]
 multimon-ng -c -a DTMF -t [output_type] [output_name]
 ```
-### Sử dụng steghide/ stegseek
+## Sử dụng steghide/ stegseek
 file có thể được giấu sử dụng `steghide` nhưng sẽ cần passphrase để có thể trích xuất
 ```
 steghide --extract -sf [file_name]
@@ -47,19 +44,19 @@ passphrase này có thể bruteforce sử dụng `stegseek`
 stegseek --crack [file_name] rockyou.txt
 ```
 
-### Kỹ thuật channel subtraction
+## Kỹ thuật channel subtraction
 Đối với âm thanh định dạng stereo, file âm thanh gồm 2 track chồng lên nhau là left và right để tái tạo âm thanh nhằm tạo hiệu ứng âm thanh trong không gian. Kỹ thuật channel subtraction bằng cách lấy 1 kênh trừ đi kênh còn lại, có thể giúp ẩn thông điệp.
 
 VD: [Stegmaxxing](../../Writeups/BKISC_CTF_2026/Miscellaneous/Stegmaxxing/writeup.md)
 
 
-### Bộ công cụ ffmpeg
-#### ffprobe
+## Bộ công cụ ffmpeg
+### ffprobe
 Dùng để trích xuất và phân tích toàn bộ nội dung chi tiết của file âm thanh hoặc video (hide_banner để ẩn cấu hình của ffmpeg)
 ```
 ffprobe -hide_banner [file_name]
 ```
-#### ffmpeg
+### ffmpeg
 Có thể sử dụng để trích xuất, chỉnh sửa các file âm thanh, video
 ```
 # lệnh trích xuất file

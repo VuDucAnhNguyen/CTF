@@ -1,5 +1,5 @@
-## Lý thuyết
-### Registry key hệ thống
+# Lý thuyết
+## Registry key hệ thống
 Đây là các file chứa cấu hình cho toàn bộ máy tính (phần cứng, phần mềm đã cài, thiết lập hệ thống). Các file này nằm trong thư mục `C:\Windows\System32\config\`, trong đó có các file sau:
 
 | REGISTRY_KEY | Ý nghĩa |
@@ -13,13 +13,13 @@
 Cơ chế DPAPI (Data Protection API) của Windows:
 - Nhiều ứng dụng không quản lý khóa mã hóa mà để Windows sinh ra khóa mã hóa từ mật khẩu user => Có thể mở khóa ứng dụng bằng cách lấy khóa người dùng thông qua SAM và SYSTEM
 
-### Registry key người dùng
+## Registry key người dùng
 Người dùng trên máy sẽ có thiết lập riêng (hình nền, icon, lịch sử file...). Dữ liệu này nằm ngay trong file `C:\Users\<Tên_User>\NTUSER.DAT`
 
-## Các phương pháp và công cụ điều tra registry key
-### Sử dụng các tool để lấy mật khẩu người dùng
+# Các phương pháp và công cụ điều tra registry key
+## Sử dụng các tool để lấy mật khẩu người dùng
 Link: [mimikatz & hashcat](https://www.nitttrchd.ac.in/imee/Labmanuals/Password%20Cracking%20of%20Windows%20Operating%20System.pdf)
-#### mimikatz
+### mimikatz
 
 Trích xuất hash mật khẩu của user qua SYSTEM và SAM
 ```
@@ -44,7 +44,7 @@ VD: [Homework](../../Writeups/BKISC_CTF_2026/Forensics/Homework/writeup.md)
 
 <br>
 
-#### impacket-secretsdump
+### impacket-secretsdump
 Trên kali linux có thể sử dụng công cụ `impacket-secretsdump` để thay thế mimikatz
 ```
 impacket-secretsdump -sam [SAM_file] -system [SYSTEM_file] local
@@ -59,7 +59,7 @@ tham số `local` để thông báo phân tích ngoại tuyến. Sau khi chạy 
 | `3dbde697d71690a769204beb12283678` | NTLM Hash - đây là mã băm thực tế Windows đang dùng |
 
 
-### Một số tool khác:
+## Một số tool khác:
 - FTKImager
 - RegistryExplorer
 - credentialsviewfile

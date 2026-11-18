@@ -1,6 +1,6 @@
-## File .zip
-### Cấu trúc 
-#### Tổng quát
+# File .zip
+## Cấu trúc 
+### Tổng quát
 Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính (linear), cho phép ghi hoặc trích xuất dữ liệu một cách tuần tự và hỗ trợ khôi phục dữ liệu ngay cả khi file bị hỏng một phần.
 |Khối | Thành phần | Chức năng |
 | - | - | - |
@@ -11,7 +11,7 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
 | | Archive extra data record | Dùng để lưu trữ thêm các thông tin bổ sung có cấu trúc |
 | Thư mục trung tâm <br> (Central Directory) | | Đóng vai trò là bảng mục lục index, chứa danh sách file trong archive (có cả quyền truy cập, thuộc tính os, con trỏ đến Local file header) |
 
-#### Local file header
+### Local file header
 ```
           0x0  0x1  0x2  0x3│ 0x4  0x5│ 0x6  0x7│ 0x8  0x9│ 0xa  0xb│ 0xc  0xd│ 0xe  0xf
        ┌────────────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
@@ -25,7 +25,7 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
        └────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-#### Data descriptor
+### Data descriptor
 ```
           0x0  0x1  0x2  0x3│ 0x4  0x5  0x6  0x7│ 0x8  0x9  0xa  0xb
        ┌────────────────────┼───────────────────┼───────────────────┐
@@ -33,7 +33,7 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
        └────────────────────┴───────────────────┴───────────────────┘
 ```
 
-#### Central directory
+### Central directory
 - file header:
 ```
           0x0  0x1  0x2  0x3  │ 0x4  0x5│ 0x6  0x7│ 0x8  0x9│ 0xa  0xb│ 0xc  0xd│ 0xe  0xf
@@ -62,7 +62,7 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
        └──────────────────────┴─────────┴─────────────────────────────────────────────────┘
 ```
 
-### Thuật toán nén
+## Thuật toán nén
 - Store: File không được nén
 - Deflate: Sử dụng LZ77 + Huffman coding, nhanh và hiệu quả, là thuật toán nén mặc định của zip
 - Deflate64: phiên bản cải thiện của Deflate nhưng độ tuơng thích và hỗ trợ hạn chế
@@ -70,7 +70,7 @@ Cấu trúc của một file ZIP được thiết kế theo dạng tuyến tính
 - LZMA: Tỷ lệ nén cao nhưng tốn nhiều tài nguyên khi nén, là lõi cho 7z
 - PPMd - Statistical compression tốt cho text nhưng chậm và tốn RAM
 
-### Mã hóa
+## Mã hóa
 -  ZipCrypto (Traditional PKZIP Encryption)
     - phương pháp mã hóa cũ
     - yếu và có thể bẻ khóa

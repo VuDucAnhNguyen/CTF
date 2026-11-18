@@ -1,8 +1,8 @@
-## Robots
-### Đề bài
+# Robots
+## Đề bài
 Beep Boop
 
-### Giải
+## Giải
 truy cập vào robots.txt từ url và tìm được flag
 
 ![image](img1.png)

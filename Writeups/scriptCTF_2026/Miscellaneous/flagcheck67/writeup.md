@@ -1,10 +1,10 @@
-## flagcheck67
-### Đề bài
+# flagcheck67
+## Đề bài
 i heard my lil bro's password was [READACTED]. just connect to the server and enter it for me, would u?
 
 Note: Please test your solve locally before going on the remote! It has a Proof-of-Work (POW). Solver given in second attachment
 
-### Giải
+## Giải
 Đề bài cho 2 file gồm `check.py` và `pow-solver.py` trong đó `pow-solver.py` được dùng để tính Proof-of-work còn `check.py` nhận input từ người dùng và kiểm tra điều kiện và in ra kết quả được hardcode
 ``` python
 import random, time

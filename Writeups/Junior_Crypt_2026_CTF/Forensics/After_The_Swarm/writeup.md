@@ -1,5 +1,5 @@
-## After The Swarm
-### Đề bài
+# After The Swarm
+## Đề bài
 We obtained a large network capture of an infected IoT device.
 You need to reconstruct not a single artifact, but three linked stages of the infection chain:
 
@@ -16,7 +16,7 @@ The sizes of the first three server payloads in the same session.
 
 Flag: Format: grodno{artifact_httpport_c2port_c2len_s2len1_s2len2_s2len3} Example: grodno{arm_44444_55555_00_00_0_0}
 
-### Giải
+## Giải
 Sau khi tải về thì được file `mirai_revenge.pcap` rất nặng với hơn 18 triệu gói tin nên mình không thể sử dụng wireshark hay tshark phân tích trực tiếp mà phải tách thành các chunk 1 triệu gói tin
 ```
 editcap -c mirai_revenge.pcap file_goc.pcap chunk.pcap

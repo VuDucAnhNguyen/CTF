@@ -1,12 +1,12 @@
-## Kira-Notes
-### Đề bài
+# Kira-Notes
+## Đề bài
 Please don't use AI to solve this question
 
 Learn instead of letting the agent do it :(
 
 What is the category? Once you play it, you will know.
 
-### Giải
+## Giải
 Đề bài cho file `places.sqlite` là lịch sử duyệt web
 ![image](img1.png)
 

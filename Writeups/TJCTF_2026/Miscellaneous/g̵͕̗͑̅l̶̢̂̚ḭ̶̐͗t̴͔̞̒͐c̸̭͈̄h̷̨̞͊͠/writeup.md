@@ -1,8 +1,8 @@
-## g̵͕̗͑̅l̶̢̂̚ḭ̶̐͗t̴͔̞̒͐c̸̭͈̄h̷̨̞͊͠
-### Đề bài
+# g̵͕̗͑̅l̶̢̂̚ḭ̶̐͗t̴͔̞̒͐c̸̭͈̄h̷̨̞͊͠
+## Đề bài
 Do not resist the g̵͕̗͑̅l̶̢̂̚ḭ̶̐͗t̴͔̞̒͐c̸̭͈̄h̷̨̞͊͠. Wrap flag in tjctf{}
 
-### Giải
+## Giải
 Sau khi tải về thì có ảnh `g̵͕̗͑̅l̶̢̂̚ḭ̶̐͗t̴͔̞̒͐c̸̭͈̄h̷̨̞͊͠..png`
 ![image](g̵͕̗͑̅l̶̢̂̚ḭ̶̐͗t̴͔̞̒͐c̸̭͈̄h̷̨̞͊͠.png)
 

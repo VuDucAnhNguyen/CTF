@@ -1,8 +1,8 @@
-## Nice Try
-### Đề bài
+# Nice Try
+## Đề bài
 I *think* this kinda similar like The MEDUSA in 2023
 
-### Giải
+## Giải
 Sau khi tải về thì được file registry key `NTUSER.DAT` và file `.illegal_corporate_breach_data_dump_0Day_exploit_toolkit_illegal` chứa hướng dẫn giải
 ```
 Decrypt hidden registry slack by hashing a deleted key's FILETIME with its physical-offset-sorted CRC32 payload.

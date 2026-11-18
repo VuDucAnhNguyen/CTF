@@ -1,8 +1,8 @@
-## Signals from the \<void>
-### Đề bài
+# Signals from the \<void>
+## Đề bài
 You work at the corporation, searching for signals from deep space. Suddenly, right before clocking out, the satellite caught a burst of random noise. Your peers think nothing of it, but you feel something is hidden in the noise.
 
-### Giải
+## Giải
 Sau khi tải về và giải nén thì được 256 ảnh đen trắng có dạng như sau
 
 ![image](img1.png)

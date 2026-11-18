@@ -1,9 +1,9 @@
-## Silent Room
-### Đề bài
+# Silent Room
+## Đề bài
 A 17-year-old girl named A left home for unclear reasons. After being unable to contact her for a while, her family reported the case to the authorities. You are given an image extracted from A's computer to look for traces that can identify A's current location.
 Determine the most likely current room, hotel, and province/city. The final flag is recovered from the evidence image itself.
 
-### Giải
+## Giải
 Đề bài cho file disk image `evidence.E01` cùng với các file `.txt` chứa thông tin và hash artifact. Sử dụng FTK Imager tiến hành phân tích `evidence.E01`
 
 Tại thư mục `Users\A\Downloads` thì thấy có các file:

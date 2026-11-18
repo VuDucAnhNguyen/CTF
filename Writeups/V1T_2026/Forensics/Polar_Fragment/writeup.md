@@ -1,12 +1,12 @@
-## Polar Fragment
-### Đề bài
+# Polar Fragment
+## Đề bài
 Fragments of evidence were recovered from a corrupted system and network captures.
 Reconstruct what was hidden.
 
-### Giải
+## Giải
 Sau khi tải về thì được các file `challenge.E01`, `locked.zip`, `pcap1.pcapng`, `pcap2.pcapng`, `pcap3.pcapng`, `pcap4.pcapng`, `pcap5.pcapng`
 
-#### file `challenge.E01`
+### file `challenge.E01`
 Tại đây tìm được `investigation_notes` báo cáo điều tra hoạt động khả nghi tài khoản Alice
 ```
 Bob's Investigation Notes
@@ -62,7 +62,7 @@ Sử dụng key đã tìm được và XOR bruteforce thì tìm được 1 phầ
 
 FLAG FRAGMENT: **y0u_7h1nk_**
 
-#### file `pcap5.pcapng`
+### file `pcap5.pcapng`
 Tại đây tìm được các luồng HTTP được gửi từ `172.16.0.5` đến `10.10.10.50` là các giá trị 0 và 1, dịch từ binary thì được cụm `hihi_6969`
 ``` python
 from scapy.all import rdpcap
@@ -94,21 +94,21 @@ There is something hidden in 4 PCAP files. Look carefully into them.
 Good luck!
 ```
 
-#### file `pcap1.pcapng`
+### file `pcap1.pcapng`
 Tại đây tìm được các luồng HTTP trong đó tìm được raw của bức ảnh được mã hóa base64, khôi phục thì tìm được 1 phần flag
 ![image](img1.png)
 ![image](img2.png)
 
 FLAG FRAGMENT: **1c3_**
 
-#### file `pcap2.pcapng`
+### file `pcap2.pcapng`
 Tại đây tìm được các luồng FTP trong đó có lệnh `STOR secret_data.bin`, nội dung của `secret_data.bin` cũng đã được mã hóa base64, giải mã thì được file pdf chứa 1 mảnh flag
 ![image](img3.png)
 ![image](img4.png)
 
 FLAG FRAGMENT: **b34r_**
 
-#### file `pcap3.pcapng`
+### file `pcap3.pcapng`
 Tại đây tìm được các luồng SMTP trong đó có file `data.bin` được truyền thông qua MIME
 >[!Note] 
 >SMTP cổ điển là một giao thức 7-bit ASCII nên để có thể truyển file ảnh, tệp tin thì cần MIME. MIME thực hiện mã hóa base64 nội dung file, thêm header để SMTP có thể gửi đi
@@ -120,7 +120,7 @@ Ghép payload của 2 gói tin và decrypt thì được file `.docx`, binwalk t
 
 FLAG FRAGMENT: **15_**
 
-#### file `pcap4.pcapng`
+### file `pcap4.pcapng`
 Tại đây có rất nhiều luồng HTTP POST gửi đến `/api/chunk`, các object được chia thành nhiều phần nên cần dựa vào `X-Chunk-Index` và `X-Chunk-Total` để khôi phục. Sử dụng src, des IP, des port để nhóm các gói tin của 1 object
 ![image](img8.png)
 

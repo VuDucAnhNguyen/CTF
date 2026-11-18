@@ -1,8 +1,8 @@
-## delta-doodle
-### Đề bài
+# delta-doodle
+## Đề bài
 i was calibrating the new AR airbrush for our maker faire booth by doodling the flag in midair. the headset, unfortunately, only logged the raw data. can you accumulate the motion trail and figure out what message we were trying to spray-paint?
 
-### Giải
+## Giải
 Tải về được file excel `trackpad_deltas` có các cột lưu thông tin thời gian, dx, dy, nhấc/ hạ bút. Viết script để vẽ lại theo log này
 ``` python
 import pandas as pd

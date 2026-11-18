@@ -1,5 +1,5 @@
-## Prompt And Pretext
-### Đề bài
+# Prompt And Pretext
+## Đề bài
 We obtained a large set of Windows event logs after suspicious activity.
 
 Find the staged PowerShell credential-phishing chain. <br>
@@ -15,7 +15,7 @@ Format: grodno{function_marker}
 
 Example: grodno{DoStuff_STAGE2}
 
-### Giải
+## Giải
 Bài cho file chứa eventlog `evtx_data.csv` dưới dạng excel. Đề bài nhắc đến kẻ tấn công đã sử dụng Powershell để tạo chuỗi tấn công lừa thông tin đăng nhập do đó tìm các sự kiện có event ID 4104 (PowerShell Script Block Logging)
 ![image](img1.png)
 

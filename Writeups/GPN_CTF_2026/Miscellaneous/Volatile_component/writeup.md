@@ -1,8 +1,8 @@
-## Volatile component
-### Đề bài
+# Volatile component
+## Đề bài
 Diallyl disulfide is one of the main parts that is responsible for the smell of garlic. With a vapor pressure of 1 mmHg at 20 °C, even if most of it is removed, some traces might remain.
 
-### Giải
+## Giải
 Bài yêu cầu cung cấp tên tài khoản Github để thêm vào Collaborators. Mình bị giới hạn các quyền không được tạo branch mới hay pull request
 ![image](img1.png)
 

@@ -1,8 +1,8 @@
-## APTV3R4_STRIKES_AGAIN
-### Đề bài
+# APTV3R4_STRIKES_AGAIN
+## Đề bài
 Help! One of our club’s computers was breached. Somehow the APT got hold of the keyfile needed to decrypt our secret flag, but they still couldn’t find the encrypted file. Funny thing is, our flag vault keeps it open in the background. Can you help the APT finish the job?
 
-### Giải
+## Giải
 Đề bài cho đường dẫn đến host lưu trữ file, tại đây có hướng dẫn tải lên (chức năng trong quá trình bảo trì) và tải xuống file. Để thực hiện các thao tác trên cần biết tên file và token của trang web
 ![image](img1.png)
 

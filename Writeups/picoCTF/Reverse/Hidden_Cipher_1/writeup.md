@@ -1,8 +1,8 @@
-## Hidden Cipher 1
-### Đề bài
+# Hidden Cipher 1
+## Đề bài
 The flag is right in front of you; just slightly encrypted. All you have to do is figure out the cipher and the key. You can download the program files
 
-### Giải
+## Giải
 Sau khi tải về thì được file `hiddencipher` là file thực thi ELF và file `flag.txt` chứa fake flag để test. Sử dụng Detect It Easy thì thấy file  `hiddencipher` được nén UPX, thực hiện giải nén và dịch ngược bằng IDA
 ```
 die hiddencipher

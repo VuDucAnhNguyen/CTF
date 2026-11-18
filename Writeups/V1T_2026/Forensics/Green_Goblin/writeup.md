@@ -1,8 +1,8 @@
-## Green Goblin
-### Đề bài
+# Green Goblin
+## Đề bài
 The Green Goblin harnessed a secret Dark Energy to attack our system. Fortunately, our defenses froze his payload mid-execution, shattering his Dark Energy into 5 fragments scattered across the OS internals (R, KO, D, EL and M). Can you recover all 5 fragments and assemble them in the correct order to seal his power forever?
 
-### Giải
+## Giải
 Sau khi tải về và giải nén thì được file `GreenGoblin.raw` là file dump memory. Khi dùng `strings GreenGoblin.raw | grep "GreenGoblin"` thì xác định được các thông tin:
 - file: `GreenGoblin (1).exe`
 - path: `C:\Users\trtr5\Downloads\GreenGoblin (1).exe`

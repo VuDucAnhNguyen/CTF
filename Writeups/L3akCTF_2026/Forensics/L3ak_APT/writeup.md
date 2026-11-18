@@ -1,8 +1,8 @@
-## L3ak APT
-### Đề bài
+# L3ak APT
+## Đề bài
 A hacker recently bragged on a dark web forum about possessing "super secret data" and joining an APT. We think he's lying, so we've secured a copy of the system to determine if he's telling the truth or if he's a fraud.
 
-### Giải
+## Giải
 Sau Khỉ tải về và giải nén thì được thư mục `C` mô phỏng lại cấu trúc thư mục máy Windows. Máy có chứa 2 ứng dụng gồm `µTorrent` và `Discord`. Đọc cache của Discord bằng `ChromeCacheVIew.exe` tại thư mục `C\Users\Max\AppData\Roaming\discord\cache\Cache_Data` thì tìm được cuộc trò chuyện giữa 2 user `not_hacker_man` và `ammar4027` về cuộc tấn công rò rỉ dữ liệu. Kẻ tấn công đã sử dụng torrent để rò rỉ dữ liệu và sử dụng bot Telegram để lưu trữ dữ liệu được lấy
 ![image](img1.png)
 ![image](img2.png)

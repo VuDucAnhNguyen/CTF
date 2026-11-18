@@ -1,8 +1,8 @@
-## Lý thuyết
+# Lý thuyết
 WINS Server (Windows Internet Name Service) là máy chủ phân giải tên NetBIOS tập trung do Microsoft phát triển 
 trong thời kỳ đầu trong hệ thống mạng Windows
 
-### Cơ chế hoạt động theo unicast:
+## Cơ chế hoạt động theo unicast:
 - Đăng ký tên (Registration): Khi một máy client khởi động hoặc nhận IP, nó gửi gói tin Unicast đến WINS Server chứa tên NetBIOS và địa chỉ IP của mình. WINS Server lưu thông tin này vào cơ sở dữ liệu động.
 - Duy trì tên (Refresh/Keep-alive): Định kỳ (theo TTL), client gửi yêu cầu gia hạn đăng ký để xác nhận tên vẫn đang hoạt động.
 - Giải phóng tên (Release): Khi tắt máy đúng quy trình, client gửi thông báo giải phóng tên để WINS Server xóa hoặc đánh dấu không còn sử dụng.

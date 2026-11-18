@@ -1,8 +1,8 @@
-## Inception
-### Đề bài
+# Inception
+## Đề bài
 I found this weird file on my computer. I tried opening it, but there were some problems.
 
-### Giải
+## Giải
 Sau khi tải về thì được file `inception`. Sử dụng file để kiểm tra thì file có header của ảnh PNG nhưng mở ra lại là file PDF chứa 1 phần flag
 ![image](img1.png)
 

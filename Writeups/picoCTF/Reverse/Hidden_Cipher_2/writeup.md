@@ -1,8 +1,8 @@
-## Hidden Cipher 2
-### Đề bài
+# Hidden Cipher 2
+## Đề bài
 The flag is right in front of you... kind of. You just need to solve a basic math problem to see it. But to get the real flag, you’ll have to understand how that math answer is used. You can download the program files 
 
-### Giải
+## Giải
 Sau khi tải về thì được file `hiddencipher2` là file thực thi ELF và file `flag.txt` chứa fake flag để test. Sử dụng IDA dịch ngược `hiddencipher2` 
 
 Hàm `generate_math_question` sinh ra ngẫu nhiên 2 số thuộc khoảng `1->10`, và phép tính `+`/`-`/`*` và trả về kết quả phép tính

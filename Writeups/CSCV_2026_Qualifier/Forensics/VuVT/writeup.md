@@ -1,5 +1,5 @@
-## VuVT
-### Đề bài
+# VuVT
+## Đề bài
 Ring... tuttt... tuttt... <br>
 SOC: Alo, Vũ ấy hả em. <br>
 VuVT: Anh ơi, em chỉ chạy update thôi mà sao máy em tự nhiên bị mã hóa rồi... <br>
@@ -7,7 +7,7 @@ SOC: Đừng động vào máy nữa. Bọn anh sẽ kiểm tra. <br>
 Một bộ dữ liệu được thu thập từ máy tính gặp sự cố. 
 Hãy điều tra xem chuyện gì đã thực sự xảy ra và tìm ra thông tin cần thiết để khôi phục kết quả cuối cùng.
 
-### Giải
+## Giải
 Sau khi tải về và giải nén thì được file gói tin mạng `network.pcapng`, bộ nhớ `mem.raw`, log `sysmon.evtx`, thư mục `Users` trong đó có chứa các file bị mã hóa `.enc` tại `Users\Public\MetaData\Data`. Tiến hành parse `sysmon.evtx` bằng EvtxCmd và dùng TimelineExplorer để phân tích.
 
 Có thể thấy người dùng đã bị ransomware khiến cho các file bị mã hóa. Từ log sysmon, tìm các sự kiện liên quan đến file `.enc` thì thấy các file này được tạo từ tiến trình `update.exe`, pid: 2844 vào lúc `2026-08-25 04:35:06`

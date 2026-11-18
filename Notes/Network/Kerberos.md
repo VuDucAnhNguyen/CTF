@@ -1,7 +1,7 @@
-## Lý thuyết
+# Lý thuyết
 Kerberos là giao thức xác thực mạng dựa trên vé (ticket-based), hoạt động theo mô hình Client-Server và sử dụng bên thứ ba tin cậy (Key Distribution Center - KDC) để chứng thực danh tính mà không truyền mật khẩu qua đường truyền.
 
-### Các thành phần cốt lõi
+## Các thành phần cốt lõi
 
 - Client / Principal: Người dùng hoặc dịch vụ cần xác thực.
 
@@ -13,7 +13,7 @@ Kerberos là giao thức xác thực mạng dựa trên vé (ticket-based), ho�
 
 - Target Server / Service: Máy chủ chứa tài nguyên mà client muốn truy cập (file share, web, database...).
 
-### Cơ chế hoạt động
+## Cơ chế hoạt động
 Pha 1: Lấy vé TGT (Authentication Service Exchange)
 
 1. `KRB_AS_REQ`: Client gửi yêu cầu kèm timestamp được mã hóa bằng password hash của domain user (Pre-Authentication).
@@ -40,8 +40,8 @@ Pha 3: Xác thực với Dịch vụ (Client/Server Exchange)
 
 6. `KRB_AP_REP` (Tùy chọn): Server giải mã ticket bằng key của chính nó, xác nhận client, và có thể phản hồi lại để thực hiện xác thực hai chiều (Mutual Authentication).
 
-## Các kỹ thuật tấn công Kerberos
-### Kerberoasting
+# Các kỹ thuật tấn công Kerberos
+## Kerberoasting
 Từ một tài khoản Domain User bất kỳ bị chiếm quyền, kẻ tấn công truy vấn Active Directory để liệt kê các tài khoản dịch vụ có gán SPN. Kẻ tấn công sau đó gửi yêu cầu `TGS-REQ` lên KDC để xin vé dịch vụ. Gói tin `TGS-REP` trả về chứa vé dịch vụ có phần dữ liệu được mã hóa bằng hash mật khẩu của tài khoản dịch vụ đó. Kẻ tấn công trích xuất bản mã này và thực hiện offline cracking.
 
 >[!Note] 
@@ -49,6 +49,6 @@ Từ một tài khoản Domain User bất kỳ bị chiếm quyền, kẻ tấn 
 
 [>!Note]
 
-###  AsREP roasting
+##  AsREP roasting
 Kẻ tấn công xác định các tài khoản người dùng đã bị tắt tính năng Kerberos Pre-Authentication (`DONT_REQ_PREAUTH`). Sau đó, kẻ tấn công mạo danh các tài khoản này để gửi trực tiếp yêu cầu `AS-REQ` lên KDC (không cần quyền đăng nhập trước). KDC bỏ qua bước xác thực trước và trả về gói tin `AS-REP`, trong đó phần dữ liệu phản hồi được mã hóa bằng khóa dẫn xuất từ mật khẩu của tài khoản mục tiêu. Kẻ tấn công lưu lại phần mã hóa này để thực hiện offline cracking.
 

@@ -1,8 +1,8 @@
-## triplets
-### Đề bài
+# triplets
+## Đề bài
 I was messing around with my image and it got really messed up... I see patterns...
 
-### Giải
+## Giải
 Sau khi tải về thì được ảnh `chall.png`
 ![image](chall.png)
 

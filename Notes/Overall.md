@@ -1,13 +1,13 @@
-## Linux commands
+# Linux commands
 strings, cat, grep, find
 
-## Exiftool
+# Exiftool
 Sử dụng exiftool để xem metadata từ file
 ```
 exiftool [file_name]
 ```
 
-## Binwalk
+# Binwalk
 Sử dụng binwalk để tính entropy
 ```
 binwalk -E [file_name]

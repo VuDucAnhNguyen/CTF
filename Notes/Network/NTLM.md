@@ -1,7 +1,7 @@
-## Lý thuyết
+# Lý thuyết
 NTLM (NT LAN Manager) là một bộ giao thức xác thực bảo mật kế thừa (legacy) của Microsoft, hoạt động dựa trên cơ chế thách thức - phản hồi (Challenge-Response) bằng việc sử dụng hàm băm mật khẩu (NT hash).
 
-### Cơ chế hoạt động:
+## Cơ chế hoạt động:
 
 Trường hợp 1: Xác thực Standalone / Local (Client $\leftrightarrow$ Server)
 
@@ -27,15 +27,15 @@ Khi Client truy cập một Server thành viên trong Domain:
 
 - DC kiểm tra với cơ sở dữ liệu ntds.dit và trả kết quả thành công/thất bại về cho Server.
 
-### NTLMv2 hash
+## NTLMv2 hash
 có thể được dựng lại theo format và dùng hashcat mode 5600 để crack:
 ```
 User::Domain:ServerChallenge:NTProofStr:NTLMv2Response(bỏ 16 byte đầu)
 ```
 
-## Các kỹ thuật tấn công NTLM
-### NTLM Relay Attack
+# Các kỹ thuật tấn công NTLM
+## NTLM Relay Attack
 - Kẻ tấn công đứng giữa chặn bắt gói tin xác thực  từ máy nạn nhân và chuyển tiếp (relay) nguyên vẹn sang một máy chủ dịch vụ khác (như SMB, HTTP, LDAP, AD CS).
 
-### NetNTLM Hash Cracking
+## NetNTLM Hash Cracking
 - Đánh cắp gói tin Authentication (NetNTLMv1 / NetNTLMv2 hash), sau đó đưa vào máy offline dùng Hashcat để bẻ khóa từ điển/brute-force.

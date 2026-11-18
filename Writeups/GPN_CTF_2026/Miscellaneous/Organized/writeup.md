@@ -1,9 +1,9 @@
-## Organized
-### Đề bài
+# Organized
+## Đề bài
 Wait, isn't this just a file of random data?
 
 Well, maybe you just don't appreciate the organization in your life...
-### Giải
+## Giải
 Sau khi tải về thì được file `data` chỉ chứa raw data. Đề bài có nhắc đến sự tổ chức, điều này khiến mình nghĩ tới entropy - yếu tố đo sự hỗn loạn. Chạy `binwalk -E` thì thấy biểu đồ gồm các vạch lên xuống liên tục, có 3 mức chính nên có thể thông điệp được ẩn đi theo cách này
 ![image](img1.png)
 

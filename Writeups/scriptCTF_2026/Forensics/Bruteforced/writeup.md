@@ -1,8 +1,8 @@
-## Bruteforced
-### Đề bài
+# Bruteforced
+## Đề bài
 Help! Our website got bruteforced. Hopefully the attacker did not leak anything.
 
-### Giải
+## Giải
 Đề bài cho fle `log.pcap`, mở và phân tích bằng wireshark thì thấy 1 request GET đến các đường dẫn `/flag_N` với N trải dài từ 0 đến 9999. Phần lớn response trả về `404 NOT FOUND` trừ request đến `/flag_4149`
 ![image](img1.png)
 

@@ -1,10 +1,10 @@
-## Double Fried
-### Đề bài
+# Double Fried
+## Đề bài
 I was planning to go to dinner with a friend but somthing felt off.
 
 Can you help me sort everything out?
 
-### Giải
+## Giải
 Sau khi tải về thì được file `kitchen_log.pcap`. Bên trong là log order của nhà hàng và có yêu cầu order flag được gửi từng chữ cái
 ![image](img1.png)
 

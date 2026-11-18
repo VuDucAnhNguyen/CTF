@@ -1,7 +1,7 @@
-## Lý thuyết
-### Linux
+# Lý thuyết
+## Linux
 
-#### 1. Cấu trúc Nhân & Mở rộng (Kernel Core & Extension)
+### 1. Cấu trúc Nhân & Mở rộng (Kernel Core & Extension)
 * **Kernel Module (LKM - Loadable Kernel Module):** Tệp mã nhị phân có định dạng ELF (`.ko`) được nạp và liên kết động trực tiếp vào không gian nhân (Kernel Space - Ring 0) khi hệ thống đang vận hành mà không cần biên dịch lại mã nguồn nhân. LKM thực thi với toàn quyền trên bộ nhớ và phần cứng, thường được dùng để cài đặt trình điều khiển thiết bị (device driver) hoặc bị khai thác để triển khai rootkit nhân.
 * **Kernel Object (`struct kobject`):** Cấu trúc dữ liệu trong nhân Linux dùng để quản lý vòng đời đối tượng thông qua cơ chế đếm tham chiếu (`kref`), thiết lập quan hệ phân cấp cây thư mục giữa các thành phần phần cứng/driver và đóng vai trò là cấu trúc nền tảng đại diện cho các thực thể xuất hiện trong `sysfs`.
 * **sysfs (`/sys`):** Hệ thống tệp ảo (pseudo filesystem) được tạo trên RAM và mount tại thư mục `/sys`. `sysfs` xuất thông tin và các thuộc tính của các `kobject` từ Kernel Space ra User Space dưới dạng các thư mục và tệp văn bản, cho phép người dùng xem trạng thái và cấu hình các thông số của thiết bị, driver và module.
@@ -10,23 +10,23 @@
   * `E` (`UNSIGNED_MODULE`): Module không có chữ ký số điện tử hợp lệ hoặc cơ chế kiểm tra chữ ký bị vô hiệu hóa.
   * `P` (`PROPRIETARY`): Module sử dụng giấy phép mã nguồn đóng, không tương thích với giấy phép GPL.
 
-#### 2. Giao tiếp & Trừu tượng hóa Tài nguyên (I/O & Syscall Interface)
+### 2. Giao tiếp & Trừu tượng hóa Tài nguyên (I/O & Syscall Interface)
 * **File Descriptor (FD):** Chỉ số nguyên không âm đại diện cho một kênh nhập/xuất (I/O) đang mở của một tiến trình, được quản lý trong bảng mô tả tệp (`task_struct->files`). Theo quy chuẩn: FD `0` là luồng nhập chuẩn (stdin), FD `1` là luồng xuất chuẩn (stdout), FD `2` là luồng lỗi chuẩn (stderr). Khi cả ba FD này cùng trỏ tới một socket mạng TCP/IP, tiến trình đó đang vận hành theo cơ chế chuyển hướng I/O của Reverse Shell.
 * **Syscall Table (`sys_call_table`):** Mảng chứa các con trỏ hàm trỏ tới địa chỉ bộ nhớ của các hàm xử lý Lời gọi hệ thống (System Call handler như `sys_read`, `sys_write`, `sys_getdents64`). Bảng này là điểm tiếp nhận và chuyển tiếp các yêu cầu dịch vụ từ User Space (Ring 3) vào Kernel Space (Ring 0).
 
-#### 3. Kỹ thuật Can thiệp & Giám sát Hệ thống (Hooking & Tracing Mechanisms)
+### 3. Kỹ thuật Can thiệp & Giám sát Hệ thống (Hooking & Tracing Mechanisms)
 * **Hook (Hooking):** Kỹ thuật chặn bắt luồng thực thi lệnh hoặc lời gọi hàm để chuyển hướng xử lý sang một đoạn mã khác trước khi (hoặc thay vì) thực thi hàm gốc. Kỹ thuật này được dùng để thay đổi tham số đầu vào, biến đổi dữ liệu trả về hoặc ngăn chặn việc thực thi của hàm đích.
 * **Ftrace (Function Tracer):** Framework truy vết hàm cấp nhân được hỗ trợ bởi cờ biên dịch `-pg`, chèn sẵn các điểm neo thực thi (`nop` hoặc `__fentry__`) tại phần mở đầu (prologue) của các hàm kernel. Bằng cách đăng ký cấu trúc `ftrace_ops` kèm cờ `IPMODIFY`, module có thể can thiệp vào thanh ghi con trỏ lệnh (`regs->ip`) để chuyển hướng luồng thực thi sang hàm thay thế mà không cần chỉnh sửa trực tiếp bảng `sys_call_table`.
 * **Tracepoint:** Điểm thăm dò tĩnh (static probe) được đặt cố định trong mã nguồn kernel bằng macro. Khi được kích hoạt, tracepoint cho phép đăng ký hàm thăm dò (probe function/callback) để đọc các biến và tham số nội bộ tại thời điểm thực thi mà không làm thay đổi luồng điều khiển của hàm gốc.
 * **Centralized Callback Function:** Hàm xử lý sự kiện tập trung (dispatcher/callback) được đăng ký với framework truy vết (như Ftrace) để tiếp nhận toàn bộ các lời gọi hàm bị can thiệp. Thay vì gán từng hàm bị hook với một hàm độc lập, hệ thống chuyển toàn bộ luồng thực thi về hàm này; tại đây, con trỏ lệnh gốc (`ip`) được kiểm tra để xác định danh tính hàm đang gọi, thực hiện lưu trữ trạng thái thanh ghi CPU và chuyển tiếp luồng thực thi tới hàm thay thế tương ứng.
 
-## Các phương pháp và công cụ điều tra bộ nhớ RAM
-### strings + grep
+# Các phương pháp và công cụ điều tra bộ nhớ RAM
+## strings + grep
 Để đọc những chuỗi trong RAM:
 - Đối với một số ứng dụng, web,.. dữ liệu được lưu dưới dạng  UTF-8, ASCII nên có thể dùng `strings`
 - Đối với Cấu trúc Kernel & OS Internals, file thực thi PE metadata, biến môi trường thì được lưu dưới dạng Little-Endian 16-bit nên cần dùng `strings -el`
 
-### Volatality 3
+## Volatality 3
 Đây là những kỹ thuật cơ bản và phổ biến nhất, sử dụng các plugin được tích hợp sẵn trong Volatility Framework để tự động trích xuất thông tin có cấu trúc.
 
 ```
@@ -35,7 +35,7 @@ vol -f [file_name] [plugin]
 
 Symbol Table (bảng biểu tượng) là thành phần cốt lõi giúp công cụ hiểu được cấu trúc dữ liệu nhị phân bên trong một bản dump RAM (tên cấu trúc dữ liệu, kích thước, độ lệch dữ liệu). Symbol Table cung cấp toàn bộ bản đồ giải mã này dưới định dạng ISF (Intermediate Symbol Format) — bản chất là các file JSON (hoặc nén .json.xz). Để nạp symbol table thì cần nạp vào `volatility3/framework/symbols/`
 
-#### Windows
+### Windows
 
 Một số plugin hay dùng:
 
@@ -60,7 +60,7 @@ VD: [Green Goblin](../../Writeups/V1T_2026/Forensics/Green_Goblin/writeup.md)
 
 ---
 
-#### Linux
+### Linux
 
 Một số plugin hay dùng:
 

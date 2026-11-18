@@ -1,5 +1,5 @@
-## Pinned to Yesterday
-### Đề bài
+# Pinned to Yesterday
+## Đề bài
 You have a set of Windows artifacts from an analyst workstation. Recover three values:
 
 The PDF filename that is first in RecentDocs\\.pdf <br>
@@ -10,7 +10,7 @@ Flag:
 Format: grodno{pdf_folder_exe} 
 Example: grodno{doc.pdf_tools_notepad.exe}
 
-### Giải
+## Giải
 Sau khi tải về và giải nén thì được 2 thư mục `JumpList.Test` và `Registry.Test`. Do đề bài nhắc đến file PDF trong mục `RecentDocs\.pdf` nên tiến hành phân tích registry key `NTUSER.DAT` thì xác định được file `WhatsNew.2898.pdf`
 ![image](img1.png)
 

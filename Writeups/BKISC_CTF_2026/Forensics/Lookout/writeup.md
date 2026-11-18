@@ -1,8 +1,8 @@
-## Lookout
-### Đề bài
+# Lookout
+## Đề bài
 While checking a monthly report sent by one of my employees, everything seemed ordinary. However, when I logged back in my mailbox the next day, something strange was happening on my computer
 
-### Giải
+## Giải
 Sau khi tải về thì được file `chall.ad1`, sử dụng FTKImager để mở file. Do đề bài nhắc đến việc nhận được báo cáo trước khi xảy ra sự cố nên tiến hành kiểm tra thư mục Outlook
 ![image](img1.png)
 

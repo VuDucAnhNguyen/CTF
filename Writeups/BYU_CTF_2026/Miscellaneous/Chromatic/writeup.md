@@ -1,8 +1,8 @@
-## Chromatic
-### Đề bài
+# Chromatic
+## Đề bài
 Red.
 
-### Giải
+## Giải
 Sau khi tải về thì được `chromatic.mp4` là video dài 54 giấy với chỉ một màu đỏ đổi độ đâm nhạt. Thử trích xuất các frame ảnh ra thì thấy mỗi 30 frame sẽ đổi màu một lần, các giá trị màu g, b = 0 còn các giá trị màu đỏ chính là ký tự ascii. Viết script trích xuất
 ```
 from PIL import Image

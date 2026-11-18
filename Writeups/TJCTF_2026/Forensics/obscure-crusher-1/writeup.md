@@ -1,8 +1,8 @@
-## obscure-crusher-1
-### Đề bài
+# obscure-crusher-1
+## Đề bài
 What if I make it so you need 3 keys to unlock the flag...
 
-### Giải
+## Giải
 Sau khi tải về thì được file `chall.bin` gồm nhiều header của icns, ttf và lzma. Trong phần LZMA_DATA có chuỗi `1D 09 0D 07 67 0F 44 04 71 1B 0C 1E 49 32 02 39 1C 10 06 40 73 2B 45 05 6C 0B 26 18 0E 0B 3E 27 13 0E 5D 0E` có thể là dữ liệu đã được mã hóa XOR
 ![image](img1.png)
 

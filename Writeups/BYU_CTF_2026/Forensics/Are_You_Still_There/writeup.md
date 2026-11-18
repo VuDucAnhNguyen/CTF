@@ -1,5 +1,5 @@
-## Are You Still There?
-### Đề bài
+# Are You Still There?
+## Đề bài
 Forms FORM-55551-6: Personnel File Addendum Addendum:
 
 One last thing:
@@ -20,7 +20,7 @@ Still alive.
 If the flag you found doesn't work, then it most likely belongs to one of the other 3 challenges.
 Hint: how would you remotely check if a server is online?
 
-### Giải
+## Giải
 Sau khi tải về thì được file `GLaDOS_Network.pcapng`. Đề bài có gợi ý đến việc kiểm tra server online/offline. Việc này có thể thực hiện thông qua các gói tin ICMP ping tới server
 ![image](img1.png)
 

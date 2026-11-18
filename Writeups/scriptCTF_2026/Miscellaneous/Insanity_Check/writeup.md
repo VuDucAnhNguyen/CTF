@@ -1,7 +1,7 @@
-## Insanity Check
-### Đề bài
+# Insanity Check
+## Đề bài
 
-### Giải
+## Giải
 Bài không cho đề bài, file đính kèm nào cả, thử f12 thì thấy có chú thích trong phần `challenge-desc`
 ```
 <!-- visit /vibecheck ;) !-->

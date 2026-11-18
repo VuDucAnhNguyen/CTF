@@ -1,8 +1,8 @@
-## Gatekeeper
-### Đề bài
+# Gatekeeper
+## Đề bài
 What’s behind the numeric gate? You only get access if you enter the right kind of number. You can download the program file
 
-### Giải
+## Giải
 Sau khi tải xuống được file `gatekeeper` là file thực thi ELF. Sử dụng IDA để dịch ngược. Chương trình thực hiện nhận input và kiểm tra có phải số thập phân hoặc không và thập lục phân hay không. Logic kiểm tra thập lục phân chỉ chạy khi không phải thập phân (input chứa ký tự không phải số)
 ![image](img1.png)
 

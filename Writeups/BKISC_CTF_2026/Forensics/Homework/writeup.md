@@ -1,10 +1,10 @@
-## Homework
-### Đề bài
+# Homework
+## Đề bài
 My friend and I were sleeping in our online class, when the session ended in group chat our teacher said the deadline is tomorrow, but we don't know what it is. Can you help us ?
 
 Flag format is BKISC{}
 
-### Giải
+## Giải
 Sau khi tải về `chall.ad1`, sử dụng FTKimage để điều tra. Do đề bài nhắc tới việc học online nên mình nghĩ đến kiểm tra phần mềm Zoom. Các database đều đã được mã hóa nên cần tìm cách giải mã. Tại file `Zoom.us.ini` thì thấy win_osencrypt_key là khóa chính dùng để mã hóa các database này
 ![image](img1.png)
 
@@ -12,8 +12,7 @@ Sau khi tải về `chall.ad1`, sử dụng FTKimage để điều tra. Do đề
 
 Để có thể giải mã khóa chính của Zoom thì cần biết mật khẩu của user. Thực hiện trích xuất các file `Window\System32\config\SYSTEM` và `Window\System32\config\SAM` và dùng mimikatz để lấy hash mật khẩu user và dùng [hashes.com](https://hashes.com/en/decrypt/hash) để tìm ra mật khẩu user
 ```
-lsadump::sam /system:C:Window\System32\config\SYSTEM
-/SAM:C:Window\System32\config\SAM
+lsadump::sam /system:C:Window\System32\config\SYSTEM /SAM:C:Window\System32\config\SAM
 ```
 ![image](img2.png)
 ![image](img3.png)
