@@ -1,4 +1,4 @@
-# Điều tra hiện vật Windows
+# Lý thuyết
 ## AppData
 Thư mục `C:\Users\<User>\AppData` (thường bị ẩn) chia làm 3 nhóm chính dựa trên phạm vi hoạt động của dữ liệu:
 | Thư mục | Biến môi trường | Mục đích lưu trữ |
@@ -25,8 +25,8 @@ Thư mục `C:\Users\<User>\AppData` (thường bị ẩn) chia làm 3 nhóm ch�
 |Windows Jump Lists	|`%APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations`	| Lưu danh sách tệp/thư mục được mở gần đây hoặc ghim theo từng ứng dụng <br> Chi tiết: [Jump_Lists.md](Jump_Lists.md) |
 | LNK Files | `%APPDATA%\Microsoft\Windows\Recent` | Shortcut tự động tạo khi mở file; chứa đường dẫn gốc, volume serial và timestamp |
 
-## Các phương pháp và công cụ điều tra thư mục Windows
-### ChromeCacheView.exe
+# Các phương pháp và công cụ điều tra thư mục Windows
+## ChromeCacheView.exe
 - Là công cụ hỗ trợ xem và trích xuất cache trình duyệt và ứng dụng sử dụng nhân Chromium
 
 VD: [L3ak_APT](../../../Writeups/L3akCTF_2026/Forensics/L3ak_APT/writeup.md)

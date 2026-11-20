@@ -48,9 +48,9 @@ Bảng MBR giả để bảo vệ ổ đĩa, ngăn các công cụ quản lý đ
 ### LBA 1 (Primary GPT Header)
 | Offset | Length | Contents |
 | --- | --- | --- |
-| `0x00` | 8 bytes | **Signature** ("EFI PART": `0x4546492050415254`) – chuỗi nhận dạng, dùng để xác nhận đây là vùng GPT header. |
+| `0x00` | 8 bytes | **Signature** ("EFI PART": `45 46 49 20 50 41 52 54`) – chuỗi nhận dạng, dùng để xác nhận đây là vùng GPT header. |
 | `0x08` | 4 bytes | **Revision** (GPT 1.0 có giá trị `0x00000100`) – số hiệu phiên bản chuẩn của GPT header. |
-| `0x0C` | 4 bytes | **Header size** (thường là `0x5C000000` hay 92 bytes, little endian) – kích thước thực tế của GPT header (tính bằng byte). |
+| `0x0C` | 4 bytes | **Header size** (thường là `5C 00 00 00` hay 92 bytes, little endian) – kích thước thực tế của GPT header (tính bằng byte). |
 | `0x10` | 4 bytes | **Header CRC32** (CRC32/zlib tính từ `0x00` đến hết header size, little endian) – mã kiểm tra toàn vẹn của GPT header (trường này phải đặt về `0` khi tính). |
 | `0x14` | 4 bytes | **Reserved** (bắt buộc toàn số `0`) – vùng dự trữ để mở rộng chuẩn UEFI trong tương lai và căn chỉnh (padding) các trường phía sau về bội số 8-byte. |
 | `0x18` | 8 bytes | **Current LBA** – địa chỉ sector (LBA) chứa chính GPT header này. |

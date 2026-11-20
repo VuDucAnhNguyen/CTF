@@ -1,4 +1,4 @@
-# Điều tra Jump Lists
+# Lý thuyết
 Jump Lists là một cơ chế của Windows dùng để lưu lịch sử và thông tin truy cập của người dùng đối với từng ứng dụng. 
 
 VD: Khi bạn nhấp chuột phải vào biểu tượng của một ứng dụng trên Taskbar hoặc Start Menu, bạn sẽ thấy danh sách các file gần đây hoặc được ghim, đây chính là Jump Lists.
@@ -35,7 +35,7 @@ Jump Lists do một số ứng dụng tự quản lý.
 
 Thường được lưu tại: `%APPDATA%\Microsoft\Windows\Recent\CustomDestinations\`
 
-## Các phương pháp và công cụ điều tra Jump Lists
+# Các phương pháp và công cụ điều tra Jump Lists
 ## JLECmd.exe (Eric Zimmerman's tools)
 Công cụ phân tích Jump Lists, thực hiện trích xuất các file `.lnk` bên trong và tổng hợp dữ liệu
 

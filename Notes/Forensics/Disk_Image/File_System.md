@@ -27,7 +27,7 @@
 **Cấu trúc MFT Record**: mỗi MFT record có kích thước 1024 bytes gồm MFT header ở đầu và danh sách các thuộc tính nối tiếp nhau theo mô hình Type - Length - Value. Kích thước mỗi thuộc tính không cố định.
 | Offset | Length | Content |
 | - | - | - |
-|`0x00`|4 bytes | Signature - Chữ ký nhận diện FILE (`0x46494c45`) |
+|`0x00`|4 bytes | Signature - Chữ ký nhận diện FILE (`46 49 4c 45`) |
 |`0x04`|2 bytes| USA Offset - Vị trí bắt đầu của mảng Update Sequence Array |
 |`0x06`|2 bytes| USA Count - Tổng số phần tử 2-byte trong mảng USA (thường là 3 cho record 1024B) |
 |`0x14`| 2 bytes | First Attribute Offset - Vị trí bắt đầu của Attribute đầu tiên |
@@ -73,7 +73,7 @@ Nếu là Non-Resident:
   - Kết thúc bằng `0x00`
 
 #### `$Bitmap` (Cluster Allocation Bitmap - MFT Record #6):
-- Cơ chế lưu trữ: Tệp hệ thống quản lý trạng thái cấp phát của toàn bộ các Cluster (LCN) trên phân vùng NTFS. Toàn bộ chuỗi bit của bản đồ được lưu bên trong thuộc tính $DATA (0x80) của MFT Record #6.
+- Cơ chế lưu trữ: Tệp hệ thống quản lý trạng thái cấp phát của toàn bộ các Cluster (LCN) trên phân vùng NTFS. Toàn bộ chuỗi bit của bản đồ được lưu bên trong thuộc tính $DATA (`0x80`) của MFT Record #6.
 - Quy ước ánh xạ Bit: Cứ 1 bit đại diện cho 1 Cluster, xếp theo thứ tự từ LSB (bit 0) đến MSB (bit 7) trong mỗi byte:
   - Bit 0: Cluster đang trống
   - Bit 1: Cluster đã được cấp phát
